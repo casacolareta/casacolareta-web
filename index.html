@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Colareta — Casa de comercio, raíz peruana</title>
+<meta name="description" content="Casa Colareta es una casa de comercio de raíz peruana. Hoy operamos Colareta Agroexport: comisionamos arándano, palta, mango y uva del Perú al mercado europeo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --hueso: #f7f5f0;
+  --hueso-2: #efebe2;
+  --tinta: #1a1a1a;
+  --tinta-2: #3a3a3a;
+  --tinta-3: #6a6a6a;
+  --ocre: #a3672a;
+  --linea: rgba(26, 26, 26, 0.1);
+  --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--hueso);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.brand {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.brand em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ocre);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--tinta-2);
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--ocre); }
+
+.hero {
+  min-height: 100vh;
+  padding: 9rem 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--tinta-3);
+  display: inline-block;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--tinta);
+  max-width: 900px;
+  margin-bottom: 2.2rem;
+  animation: fadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--ocre);
+  font-weight: 500;
+}
+
+.hero-sub {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 540px;
+  color: var(--tinta-2);
+  margin-bottom: 3rem;
+  animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 2rem;
+  background: var(--tinta);
+  color: var(--hueso);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border: 1px solid var(--tinta);
+  animation: fadeUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.hero-cta:hover {
+  background: transparent;
+  color: var(--tinta);
+}
+
+.hero-cta::after {
+  content: '→';
+  transition: transform 0.3s;
+}
+
+.hero-cta:hover::after { transform: translateX(5px); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 28px;
+  background: var(--tinta-3);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(1); opacity: 0.5; }
+  50% { transform: scaleY(0.4); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.linea-activa {
+  background: var(--tinta);
+  color: var(--hueso);
+  padding: 4.5rem 3rem;
+  border-top: 1px solid var(--linea);
+}
+
+.linea-activa-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.la-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.la-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(247, 245, 240, 0.15);
+}
+
+.la-item {
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid rgba(247, 245, 240, 0.15);
+  text-align: center;
+  transition: background 0.4s;
+}
+
+.la-item:last-child { border-right: none; }
+.la-item:hover { background: rgba(163, 103, 42, 0.08); }
+
+.la-fruta {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.la-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 1.2rem;
+}
+
+.la-dato {
+  font-size: 0.82rem;
+  color: rgba(247, 245, 240, 0.7);
+  line-height: 1.5;
+}
+
+.mercado {
+  padding: 7rem 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.mercado-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mercado-titulo {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  color: var(--tinta);
+}
+
+.mercado-titulo em {
+  font-style: italic;
+  color: var(--ocre);
+}
+
+.mercado-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.dato {
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+  text-align: center;
+}
+
+.dato:last-child { border-right: none; }
+
+.dato-cifra {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: var(--tinta);
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.dato-cifra em {
+  font-size: 1.2rem;
+  font-style: normal;
+  color: var(--ocre);
+  margin-left: 0.2rem;
+}
+
+.dato-titulo {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tinta);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.dato-desc {
+  font-size: 0.78rem;
+  color: var(--tinta-3);
+  line-height: 1.5;
+}
+
+.mercado-fuente {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.72rem;
+  color: var(--tinta-3);
+  letter-spacing: 0.05em;
+}
+
+.section {
+  padding: 7rem 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ocre);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 4rem;
+  max-width: 700px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--ocre);
+}
+
+.que-hacemos {
+  background: var(--hueso-2);
+  padding: 7rem 3rem;
+}
+
+.qh-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.qh-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.qh-lead {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--tinta);
+}
+
+.qh-lead em {
+  font-style: italic;
+  color: var(--ocre);
+}
+
+.qh-body {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--tinta-2);
+}
+
+.qh-body p { margin-bottom: 1.4rem; }
+.qh-body p:last-child { margin-bottom: 0; }
+
+.qh-body strong {
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.razones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.razon {
+  padding: 3rem 2rem 0 0;
+  border-right: 1px solid var(--linea);
+}
+
+.razon:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.razon-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ocre);
+  margin-bottom: 1.4rem;
+}
+
+.razon-titulo {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--tinta);
+}
+
+.razon-texto {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--tinta-2);
+}
+
+.contacto {
+  background: var(--tinta);
+  color: var(--hueso);
+  padding: 7rem 3rem;
+}
+
+.contacto-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.contacto .section-num { color: var(--ocre); }
+
+.contacto h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.8rem;
+}
+
+.contacto h2 em {
+  font-style: italic;
+  color: var(--ocre);
+}
+
+.contacto p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(247, 245, 240, 0.75);
+  margin-bottom: 2.5rem;
+  max-width: 460px;
+}
+
+.contacto-meta {
+  border-top: 1px solid rgba(247, 245, 240, 0.12);
+  padding-top: 1.5rem;
+}
+
+.contacto-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.08);
+  font-size: 0.85rem;
+}
+
+.contacto-meta-row:last-child { border-bottom: none; }
+
+.contacto-meta-row span:first-child {
+  color: var(--ocre);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+.contacto-meta-row a,
+.contacto-meta-row .valor {
+  color: var(--hueso);
+  text-decoration: none;
+  text-align: right;
+}
+
+.contacto-meta-row a:hover { border-bottom: 1px solid var(--ocre); }
+
+.form-wrapper {
+  background: rgba(247, 245, 240, 0.04);
+  padding: 2.5rem;
+  border: 1px solid rgba(247, 245, 240, 0.1);
+}
+
+.form-row {
+  margin-bottom: 1.4rem;
+}
+
+.form-row label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 0.5rem;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.2);
+  padding: 0.6rem 0;
+  color: var(--hueso);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-bottom-color: var(--ocre);
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-rgpd {
+  font-size: 0.74rem;
+  color: rgba(247, 245, 240, 0.55);
+  margin: 1.3rem 0;
+  line-height: 1.5;
+}
+
+.form-rgpd a {
+  color: var(--ocre);
+  text-decoration: none;
+}
+
+.form-submit {
+  background: var(--ocre);
+  color: var(--hueso);
+  border: 1px solid var(--ocre);
+  padding: 0.9rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.form-submit:hover {
+  background: transparent;
+  color: var(--ocre);
+}
+
+.footer {
+  background: var(--tinta);
+  color: rgba(247, 245, 240, 0.6);
+  padding: 2.5rem 3rem;
+  border-top: 1px solid rgba(247, 245, 240, 0.08);
+  font-size: 0.78rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ocre);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 8rem 1.5rem 4rem; min-height: auto; }
+  .hero-eyebrow { font-size: 0.62rem; margin-bottom: 2rem; }
+  .hero-scroll { display: none; }
+  .linea-activa { padding: 3.5rem 1.5rem; }
+  .la-grid { grid-template-columns: repeat(2, 1fr); }
+  .la-item:nth-child(2) { border-right: none; }
+  .la-item:nth-child(1), .la-item:nth-child(2) { border-bottom: 1px solid rgba(247, 245, 240, 0.15); }
+  .mercado { padding: 5rem 1.5rem; }
+  .mercado-grid { grid-template-columns: repeat(2, 1fr); }
+  .dato:nth-child(2) { border-right: none; }
+  .que-hacemos { padding: 5rem 1.5rem; }
+  .qh-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .section { padding: 5rem 1.5rem; }
+  .razones { grid-template-columns: 1fr; }
+  .razon { border-right: none; border-bottom: 1px solid var(--linea); padding: 2.5rem 0; }
+  .razon:last-child { border-bottom: none; }
+  .contacto { padding: 5rem 1.5rem; }
+  .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .form-wrapper { padding: 1.8rem 1.4rem; }
+  .footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#inicio" class="brand">Casa <em>Colareta</em></a>
+  <ul class="nav-links">
+    <li><a href="#linea-activa">Productos</a></li>
+    <li><a href="#mercado">Mercado</a></li>
+    <li><a href="#que-hacemos">Qué hacemos</a></li>
+    <li><a href="#por-que">Por qué nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-eyebrow">Establecida 2025 · Sant Cugat del Vallès</div>
+  <h1>Casa de comercio,<br><em>raíz peruana.</em></h1>
+  <p class="hero-sub">Una casa levantada para durar generaciones. Hoy abrimos con Colareta Agroexport, el puente directo entre el productor peruano y el comprador europeo.</p>
+  <a href="#contacto" class="hero-cta">Conversemos</a>
+  <div class="hero-scroll">Continúe</div>
+</section>
+
+<section class="linea-activa" id="linea-activa">
+  <div class="linea-activa-inner">
+    <div class="la-label">— Línea Activa · Colareta Agroexport —</div>
+    <div class="la-grid">
+      <div class="la-item">
+        <div class="la-fruta">Arándano</div>
+        <div class="la-meta">Origen Perú</div>
+        <div class="la-dato">1° exportador<br>mundial</div>
+      </div>
+      <div class="la-item">
+        <div class="la-fruta">Uva</div>
+        <div class="la-meta">Origen Perú</div>
+        <div class="la-dato">1° exportador<br>mundial de uva fresca</div>
+      </div>
+      <div class="la-item">
+        <div class="la-fruta">Palta</div>
+        <div class="la-meta">Origen Perú</div>
+        <div class="la-dato">2° exportador<br>mundial</div>
+      </div>
+      <div class="la-item">
+        <div class="la-fruta">Mango</div>
+        <div class="la-meta">Origen Perú</div>
+        <div class="la-dato">Top mundial<br>en variedad Kent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mercado" id="mercado">
+  <div class="mercado-eyebrow">— El mercado en cifras —</div>
+  <h2 class="mercado-titulo">Perú no es promesa. Es <em>presente</em> de la agroexportación mundial.</h2>
+  <div class="mercado-grid">
+    <div class="dato">
+      <div class="dato-cifra">15<em>mil M</em></div>
+      <div class="dato-titulo">Agroexportación 2025</div>
+      <div class="dato-desc">USD en envíos al cierre del año</div>
+    </div>
+    <div class="dato">
+      <div class="dato-cifra">+20<em>%</em></div>
+      <div class="dato-titulo">Crecimiento anual</div>
+      <div class="dato-desc">Frente a 2024, según Midagri</div>
+    </div>
+    <div class="dato">
+      <div class="dato-cifra">115</div>
+      <div class="dato-titulo">Mercados de destino</div>
+      <div class="dato-desc">Países que reciben fruta peruana</div>
+    </div>
+    <div class="dato">
+      <div class="dato-cifra">5<em>M ton</em></div>
+      <div class="dato-titulo">Volumen exportado</div>
+      <div class="dato-desc">Récord histórico del país</div>
+    </div>
+  </div>
+  <div class="mercado-fuente">Fuentes: ADEX, Midagri, BCRP — datos cierre 2025</div>
+</section>
+
+<section class="que-hacemos" id="que-hacemos">
+  <div class="qh-inner">
+    <div class="section-num">— 01 · Qué hacemos</div>
+    <h2 class="section-title">Una casa, varios <em>oficios.</em></h2>
+    <div class="qh-grid">
+      <div class="qh-lead">
+        Casa Colareta nace como casa de comercio, no como empresa de un solo producto. La pensamos para que <em>aguante el tiempo</em> y para alojar bajo un mismo techo distintas líneas de negocio a lo largo de los años.
+      </div>
+      <div class="qh-body">
+        <p>La submarca activa hoy es <strong>Colareta Agroexport</strong>. Trabajamos como agente comercial de productores peruanos en Europa, con foco en cuatro frutas: arándano, palta, mango y uva.</p>
+        <p>No somos productores. No tenemos cultivos ni almacenes. Somos el puente comercial. Esa es la regla, y por eso somos honestos sobre lo que aportamos: contacto directo, criterio de compra y un trato europeo de quien vive y trabaja en Barcelona.</p>
+        <p>El nombre <em>"Casa"</em> no es decorativo. Es una promesa de continuidad. En su momento podrán colgar de aquí otras líneas: café, vinos, logística. La marca raíz se queda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="por-que">
+  <div class="section-num">— 02 · Por qué nosotros</div>
+  <h2 class="section-title">Tres razones, sin <em>relleno.</em></h2>
+  <div class="razones">
+    <div class="razon">
+      <div class="razon-num">i.</div>
+      <h3 class="razon-titulo">Doble orilla</h3>
+      <p class="razon-texto">Peruano de origen, europeo de oficio. Vivo en Barcelona desde hace años trabajando en exportación. Hablamos los dos idiomas comerciales: el del campo peruano y el del importador europeo.</p>
+    </div>
+    <div class="razon">
+      <div class="razon-num">ii.</div>
+      <h3 class="razon-titulo">Sin intermediarios escondidos</h3>
+      <p class="razon-texto">Trabajamos a comisión, transparente. Usted sabe lo que paga el comprador, sabe lo que recibe el productor y sabe lo que cobramos nosotros. No hay sobreprecio camuflado en el flete ni en la calidad.</p>
+    </div>
+    <div class="razon">
+      <div class="razon-num">iii.</div>
+      <h3 class="razon-titulo">Casa, no startup</h3>
+      <p class="razon-texto">No buscamos crecer rápido y vender. Buscamos construir una casa de comercio que dure. Eso cambia cómo elegimos a los productores con los que trabajamos y a los compradores que aceptamos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <div class="section-num">— 03 · Contacto</div>
+      <h2>Hablemos <em>derecho.</em></h2>
+      <p>Si es productor peruano y busca colocar su fruta en Europa, escriba. Si es importador europeo y busca origen Perú con un interlocutor en zona horaria europea, escriba también. Respondo siempre.</p>
+      <div class="contacto-meta">
+        <div class="contacto-meta-row">
+          <span>Correo</span>
+          <a href="mailto:pedrogonzalez@casacolareta.com">pedrogonzalez@casacolareta.com</a>
+        </div>
+        <div class="contacto-meta-row">
+          <span>Sede</span>
+          <span class="valor">Sant Cugat del Vallès, Barcelona</span>
+        </div>
+        <div class="contacto-meta-row">
+          <span>Fundador</span>
+          <span class="valor">Pedro Gustavo Gonzalez Colareta</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrapper">
+      <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contacto">
+        <p style="display:none;"><label>No rellenar: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="empresa">Empresa o productor</label>
+          <input type="text" id="empresa" name="empresa">
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+
+        <p class="form-rgpd">
+          Al enviar acepta que tratemos sus datos para responder a su consulta. No compartimos datos con terceros.
+        </p>
+
+        <button type="submit" class="form-submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>Casa <em>Colareta</em> · Casa de comercio fundada en 2025</div>
+  <div>casacolareta.com · Sant Cugat del Vallès, Barcelona</div>
+</footer>
+
+</body>
+</html>
