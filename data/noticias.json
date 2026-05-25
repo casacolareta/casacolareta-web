@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-25T16:30:00-05:00",
+  "updated_at": "2026-05-25T16:45:00-05:00",
   "noticias": [
     {
       "id": "conveagro-paro-nacional-2026-05-25",
@@ -33,39 +33,6 @@
       "fuente": "Infobae",
       "url": "https://www.infobae.com/peru/2026/05/23/peru-abre-19-nuevos-mercados-para-productos-agropecuarios-en-solo-cuatro-meses-del-2026/",
       "imagen": "img/noticias/midagri-mercados.jpg"
-    },
-    {
-      "id": "ta-export-esparrago",
-      "categoria": "Reordenamiento",
-      "titulo": "Ta Export le crece al doble a Danper y arranca el reordenamiento del espárrago peruano",
-      "resumen": "Danper, líder histórico del espárrago peruano, encuentra un retador serio. Ta Export disparó sus envíos un 97% hasta US$8,69 millones en 17 semanas, y lo hace cobrando US$4,20 por kilo, por encima del promedio del mercado. Pelea por calidad, no por descuento.",
-      "fecha": "Agraria.pe",
-      "fecha_iso": "2026-05-06",
-      "fuente": "Agraria.pe",
-      "url": "https://agraria.pe/noticias/el-nuevo-orden-del-esparrago-ta-export-y-la-elite-que-se-exp-42191",
-      "imagen": "img/noticias/ta-export.jpg"
-    },
-    {
-      "id": "cerro-prieto-arandanos-75m",
-      "categoria": "Tormenta arancelaria",
-      "titulo": "Trump empuja a Cerro Prieto a una reconversión de US$75 millones en arándanos",
-      "resumen": "Con el 75-90% de sus arándanos atados a EEUU, los aranceles de Trump dejaron a Cerro Prieto sin opción. La respuesta: US$75 millones para arrancar 650 hectáreas de Biloxi y Ventura, plantar variedades nuevas (Sekoya Pop, Mágica, Rocío, Imperial) y migrar todo el cultivo a macetas. Apuesta a contrarreloj.",
-      "fecha": "Gestión",
-      "fecha_iso": "2026-04-22",
-      "fuente": "Gestión",
-      "url": "https://gestion.pe/g-de-gestion/reportaje/cerro-prieto-apuesta-us-75-millones-en-arandanos-y-ajusta-estrategia-en-palta-por-que-noticia/",
-      "imagen": "img/noticias/cerro-prieto.jpg"
-    },
-    {
-      "id": "hortifrut-perdidas-77m",
-      "categoria": "Números rojos",
-      "titulo": "El gigante mundial del arándano Hortifrut se hunde con US$77 millones en pérdidas y arrastra US$777 millones de deuda",
-      "resumen": "El mayor productor mundial de arándanos cerró 2025 con US$77,7 millones en pérdidas, casi el doble que en 2024. Tuvo que castigar US$80,6M de activos para cerrar campos en México y replantar todo en Perú y China. Con US$776,8M de deuda neta, los chilenos llegan al 2026 con los bancos respirándoles encima.",
-      "fecha": "Infobae",
-      "fecha_iso": "2025-12-01",
-      "fuente": "Infobae",
-      "url": "https://www.infobae.com/peru/2025/11/29/chilena-hortifrut-la-mayor-productora-y-comercializadora-de-arandanos-del-mundo-reporta-millonarias-perdidas-y-anuncia-cambios-en-peru/",
-      "imagen": "img/noticias/hortifrut.jpg"
     }
   ]
 }
