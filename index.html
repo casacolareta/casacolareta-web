@@ -350,6 +350,120 @@ body {
   letter-spacing: 0.05em;
 }
 
+.noticias {
+  padding: 7rem 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.noticias-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.noticias-titulo {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 4rem;
+  color: var(--tinta);
+}
+
+.noticias-titulo em {
+  font-style: italic;
+  color: var(--ocre);
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.noticia {
+  padding: 2.5rem 2.5rem 2.5rem 0;
+  border-right: 1px solid var(--linea);
+}
+
+.noticia:not(:first-child) {
+  padding-left: 2.5rem;
+}
+
+.noticia:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.noticia-tag {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.noticia-fruta {
+  font-size: 0.63rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ocre);
+}
+
+.noticia-fecha {
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.noticia h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: var(--tinta);
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.noticia p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--tinta-2);
+  margin-bottom: 1.5rem;
+}
+
+.noticia-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s;
+}
+
+.noticia-link::after { content: '→'; }
+.noticia-link:hover { gap: 0.9rem; }
+
+.noticias-fuente {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.72rem;
+  color: var(--tinta-3);
+  letter-spacing: 0.05em;
+}
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -641,6 +755,11 @@ body {
   .mercado { padding: 5rem 1.5rem; }
   .mercado-grid { grid-template-columns: repeat(2, 1fr); }
   .dato:nth-child(2) { border-right: none; }
+  .noticias { padding: 5rem 1.5rem; }
+  .noticias-grid { grid-template-columns: 1fr; }
+  .noticia { border-right: none; border-bottom: 1px solid var(--linea); padding: 2.5rem 0; }
+  .noticia:not(:first-child) { padding-left: 0; }
+  .noticia:last-child { border-bottom: none; }
   .que-hacemos { padding: 5rem 1.5rem; }
   .qh-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .section { padding: 5rem 1.5rem; }
@@ -661,6 +780,7 @@ body {
   <ul class="nav-links">
     <li><a href="#linea-activa">Productos</a></li>
     <li><a href="#mercado">Mercado</a></li>
+    <li><a href="#noticias">Noticias</a></li>
     <li><a href="#que-hacemos">Qué hacemos</a></li>
     <li><a href="#por-que">Por qué nosotros</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -729,6 +849,41 @@ body {
     </div>
   </div>
   <div class="mercado-fuente">Fuentes: ADEX, Midagri, BCRP — datos cierre 2025</div>
+</section>
+
+<section class="noticias" id="noticias">
+  <div class="noticias-eyebrow">— Noticias del sector —</div>
+  <h2 class="noticias-titulo">El agro peruano en el <em>mundo.</em></h2>
+  <div class="noticias-grid">
+    <div class="noticia">
+      <div class="noticia-tag">
+        <span class="noticia-fruta">Arándano</span>
+        <span class="noticia-fecha">Abr 2025 · Red Agrícola</span>
+      </div>
+      <h3>Perú proyecta exportar 400.000 toneladas de arándanos en la campaña 2025/26</h3>
+      <p>La campaña anterior cerró con 317.997 toneladas, un crecimiento del 42%. El reto ahora es logístico: movilizar más de 20.000 toneladas semanales de fruta fresca.</p>
+      <a href="https://redagricola.com/peru-exportaria-400-mil-toneladas-de-arandanos-en-campana-2025-26/" class="noticia-link" target="_blank" rel="noopener">Leer en Red Agrícola</a>
+    </div>
+    <div class="noticia">
+      <div class="noticia-tag">
+        <span class="noticia-fruta">Palta</span>
+        <span class="noticia-fecha">Feb 2026 · Red Agrícola</span>
+      </div>
+      <h3>ProHass proyecta un crecimiento de hasta 15% en exportaciones de palta Hass para 2026</h3>
+      <p>Tras el récord histórico de 722.754 toneladas exportadas en 2025, la industria anticipa otro año de crecimiento sostenido gracias a nuevas hectáreas en producción.</p>
+      <a href="https://redagricola.com/prohass-proyecta-un-crecimiento-de-hasta-15-en-exportaciones-de-palta-hass-para-2026/" class="noticia-link" target="_blank" rel="noopener">Leer en Red Agrícola</a>
+    </div>
+    <div class="noticia">
+      <div class="noticia-tag">
+        <span class="noticia-fruta">Mango</span>
+        <span class="noticia-fecha">May 2026 · Red Agrícola</span>
+      </div>
+      <h3>El mango peruano busca consolidar su liderazgo global en medio de nuevos retos</h3>
+      <p>Fletes altos, escasez de contenedores y competencia de México y Brasil obligan al sector a diversificar mercados y construir marcas diferenciadas para sostener el liderazgo.</p>
+      <a href="https://redagricola.com/el-mango-peruano-busca-consolidar-su-liderazgo-global-en-medio-de-nuevos-retos-comerciales/" class="noticia-link" target="_blank" rel="noopener">Leer en Red Agrícola</a>
+    </div>
+  </div>
+  <div class="noticias-fuente">Fuente: Red Agrícola · Noticias seleccionadas del sector agroexportador peruano</div>
 </section>
 
 <section class="que-hacemos" id="que-hacemos">
