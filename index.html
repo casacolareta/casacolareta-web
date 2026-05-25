@@ -1004,5 +1004,42 @@ body {
   <div>casacolareta.com · Sant Cugat del Vallès, Barcelona</div>
 </footer>
 
+<script>
+(async function cargarNoticias() {
+  try {
+    const r = await fetch('data/noticias.json?v=' + Date.now(), {cache: 'no-store'});
+    if (!r.ok) return;
+    const data = await r.json();
+    if (!data.noticias || !data.noticias.length) return;
+    const grid = document.querySelector('.noticias-grid');
+    if (!grid) return;
+    const escape = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    grid.innerHTML = data.noticias.slice(0, 6).map(n => `
+      <a class="noticia" href="${escape(n.url)}" target="_blank" rel="noopener">
+        <div class="noticia-imagen">
+          <img src="${escape(n.imagen)}" alt="${escape(n.titulo)}" loading="lazy">
+        </div>
+        <div class="noticia-tag">
+          <span class="noticia-fruta">${escape(n.categoria)}</span>
+          <span class="noticia-fecha">${escape(n.fecha)}</span>
+        </div>
+        <h3>${escape(n.titulo)}</h3>
+        <p>${escape(n.resumen)}</p>
+        <span class="noticia-link">Leer en ${escape(n.fuente)}</span>
+      </a>
+    `).join('');
+    // Actualizar el texto "actualizado" en el pie de la sección
+    const fuente = document.querySelector('.noticias-fuente');
+    if (fuente && data.updated_at) {
+      const d = new Date(data.updated_at);
+      const fmt = d.toLocaleDateString('es-PE', {day: '2-digit', month: 'long', year: 'numeric'});
+      fuente.textContent = `Actualizado el ${fmt} · Movimientos del sector agroexportador peruano`;
+    }
+  } catch (e) {
+    // Silencio: si falla, queda el HTML estático como fallback
+  }
+})();
+</script>
+
 </body>
 </html>

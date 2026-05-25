@@ -1,0 +1,38 @@
+{
+  "updated_at": "2026-05-25T15:30:00-05:00",
+  "noticias": [
+    {
+      "id": "arandano-400k-2025-26",
+      "categoria": "Arándano",
+      "titulo": "Perú proyecta exportar 400.000 toneladas de arándanos en la campaña 2025/26",
+      "resumen": "La campaña anterior cerró con 317.997 toneladas, un crecimiento del 42%. El reto ahora es logístico: movilizar más de 20.000 toneladas semanales de fruta fresca.",
+      "fecha": "Abr 2025 · Red Agrícola",
+      "fecha_iso": "2025-04-15",
+      "fuente": "Red Agrícola",
+      "url": "https://redagricola.com/peru-exportaria-400-mil-toneladas-de-arandanos-en-campana-2025-26/",
+      "imagen": "img/noticias/arandano.webp"
+    },
+    {
+      "id": "prohass-palta-2026",
+      "categoria": "Palta",
+      "titulo": "ProHass proyecta un crecimiento de hasta 15% en exportaciones de palta Hass para 2026",
+      "resumen": "Tras el récord histórico de 722.754 toneladas exportadas en 2025, la industria anticipa otro año de crecimiento sostenido gracias a nuevas hectáreas en producción.",
+      "fecha": "Feb 2026 · Red Agrícola",
+      "fecha_iso": "2026-02-10",
+      "fuente": "Red Agrícola",
+      "url": "https://redagricola.com/prohass-proyecta-un-crecimiento-de-hasta-15-en-exportaciones-de-palta-hass-para-2026/",
+      "imagen": "img/noticias/palta.jpg"
+    },
+    {
+      "id": "mango-liderazgo-global",
+      "categoria": "Mango",
+      "titulo": "El mango peruano busca consolidar su liderazgo global en medio de nuevos retos",
+      "resumen": "Fletes altos, escasez de contenedores y competencia de México y Brasil obligan al sector a diversificar mercados y construir marcas diferenciadas para sostener el liderazgo.",
+      "fecha": "May 2026 · Red Agrícola",
+      "fecha_iso": "2026-05-01",
+      "fuente": "Red Agrícola",
+      "url": "https://redagricola.com/el-mango-peruano-busca-consolidar-su-liderazgo-global-en-medio-de-nuevos-retos-comerciales/",
+      "imagen": "img/noticias/mango.webp"
+    }
+  ]
+}
