@@ -2,37 +2,70 @@
   "updated_at": "2026-05-25T15:30:00-05:00",
   "noticias": [
     {
-      "id": "arandano-400k-2025-26",
-      "categoria": "Arándano",
-      "titulo": "Perú proyecta exportar 400.000 toneladas de arándanos en la campaña 2025/26",
-      "resumen": "La campaña anterior cerró con 317.997 toneladas, un crecimiento del 42%. El reto ahora es logístico: movilizar más de 20.000 toneladas semanales de fruta fresca.",
-      "fecha": "Abr 2025 · Red Agrícola",
-      "fecha_iso": "2025-04-15",
-      "fuente": "Red Agrícola",
-      "url": "https://redagricola.com/peru-exportaria-400-mil-toneladas-de-arandanos-en-campana-2025-26/",
-      "imagen": "img/noticias/arandano.webp"
+      "id": "ta-export-esparrago",
+      "categoria": "Cambio institucional",
+      "titulo": "Ta Export irrumpe en la cúspide del espárrago peruano con un crecimiento del 97%",
+      "resumen": "El podio del espárrago se reordena: Ta Export disparó sus envíos un 97% hasta US$8,69 millones en las primeras 17 semanas del año y le pisa los talones al líder Danper Trujillo. Vendiendo a US$4,18-4,26 por kilo, por encima del promedio del mercado, la pelea no va por precio sino por calidad.",
+      "fecha": "6 May 2026 · Agraria.pe",
+      "fecha_iso": "2026-05-06",
+      "fuente": "Agraria.pe",
+      "url": "https://agraria.pe/noticias/el-nuevo-orden-del-esparrago-ta-export-y-la-elite-que-se-exp-42191",
+      "imagen": "img/noticias/ta-export.jpg"
     },
     {
-      "id": "prohass-palta-2026",
-      "categoria": "Palta",
-      "titulo": "ProHass proyecta un crecimiento de hasta 15% en exportaciones de palta Hass para 2026",
-      "resumen": "Tras el récord histórico de 722.754 toneladas exportadas en 2025, la industria anticipa otro año de crecimiento sostenido gracias a nuevas hectáreas en producción.",
-      "fecha": "Feb 2026 · Red Agrícola",
-      "fecha_iso": "2026-02-10",
-      "fuente": "Red Agrícola",
-      "url": "https://redagricola.com/prohass-proyecta-un-crecimiento-de-hasta-15-en-exportaciones-de-palta-hass-para-2026/",
-      "imagen": "img/noticias/palta.jpg"
+      "id": "cerro-prieto-arandanos-75m",
+      "categoria": "Inversión",
+      "titulo": "Cerro Prieto invierte US$75 millones en renovar arándanos en plena tormenta arancelaria de Trump",
+      "resumen": "Cerro Prieto reemplazará las variedades tradicionales Biloxi y Ventura por Sekoya Pop, Mágica, Rocío e Imperial en 650 hectáreas y migrará todo su cultivo a macetas para ahorrar 30% de agua. El movimiento sirve también para diversificar mercados hacia Asia y Europa ante el 75-90% de dependencia que aún tienen con EEUU.",
+      "fecha": "22 Abr 2026 · Gestión",
+      "fecha_iso": "2026-04-22",
+      "fuente": "Gestión",
+      "url": "https://gestion.pe/g-de-gestion/reportaje/cerro-prieto-apuesta-us-75-millones-en-arandanos-y-ajusta-estrategia-en-palta-por-que-noticia/",
+      "imagen": "img/noticias/cerro-prieto.jpg"
     },
     {
-      "id": "mango-liderazgo-global",
-      "categoria": "Mango",
-      "titulo": "El mango peruano busca consolidar su liderazgo global en medio de nuevos retos",
-      "resumen": "Fletes altos, escasez de contenedores y competencia de México y Brasil obligan al sector a diversificar mercados y construir marcas diferenciadas para sostener el liderazgo.",
-      "fecha": "May 2026 · Red Agrícola",
-      "fecha_iso": "2026-05-01",
+      "id": "agrokasa-la-catalina-54m",
+      "categoria": "Inversión",
+      "titulo": "Agrokasa invierte S/54 millones en La Catalina y cierra su giro definitivo del espárrago a las berries",
+      "resumen": "El holding controlado por Grupo Hame (Guatemala) destinará S/54 millones (US$15,6M) en su fundo La Catalina, Ica, para 188 hectáreas de arándano y 9 de uva con riego por goteo y un reservorio de 320.000 m³. Es la primera apuesta agrícola seria del nuevo directorio tras la venta de la compañía.",
+      "fecha": "8 Abr 2026 · Gestión",
+      "fecha_iso": "2026-04-08",
+      "fuente": "Gestión",
+      "url": "https://gestion.pe/economia/empresas/agrokasa-con-millonario-proyecto-en-fundo-de-ica-este-es-el-plan-para-ampliar-areas-de-dos-cultivos-noticia/",
+      "imagen": "img/noticias/agrokasa.jpg"
+    },
+    {
+      "id": "westfalia-chiclayo-2026",
+      "categoria": "Inversión",
+      "titulo": "Westfalia Fruit Perú estrena planta en Chiclayo en junio y proyecta crecer 15% en 2026",
+      "resumen": "La nueva planta arrancará en junio con palta y mango IQF y pulpa de palta con tecnología HPP, proyectando 10-15% de crecimiento sobre las 43.000 toneladas que exportó en 2025. Westfalia busca abrir Filipinas, México, Taiwán e India, diversificándose más allá de la palta que aún representa el 85% de su negocio.",
+      "fecha": "23 Feb 2026 · Gestión",
+      "fecha_iso": "2026-02-23",
+      "fuente": "Gestión",
+      "url": "https://gestion.pe/economia/empresas/westfalia-fruit-peru-proyecta-crecer-entre-10-y-15-en-2026-con-impulso-de-su-nueva-planta-en-chiclayo-programada-para-empezar-a-operar-en-junio-noticia/",
+      "imagen": "img/noticias/westfalia.jpg"
+    },
+    {
+      "id": "camposol-origen-400m",
+      "categoria": "Inversión",
+      "titulo": "Camposol presenta sus dos primeras variedades patentadas de arándano tras un financiamiento de US$400 millones",
+      "resumen": "Camposol lanzó en Fruit Logistica Berlín su programa genético propio ORIGEN con las variedades Sol One y Maia Blue, fruto de más de una década de investigación. Con financiamiento de US$400 millones de BID Invest, IFC, Rabobank, Scotiabank y BBVA, proyecta plantar 800 hectáreas nuevas en 2026 y subir 30% sus volúmenes hacia 2030.",
+      "fecha": "5 Feb 2026 · Red Agrícola",
+      "fecha_iso": "2026-02-05",
       "fuente": "Red Agrícola",
-      "url": "https://redagricola.com/el-mango-peruano-busca-consolidar-su-liderazgo-global-en-medio-de-nuevos-retos-comerciales/",
-      "imagen": "img/noticias/mango.webp"
+      "url": "https://redagricola.com/camposol-lanza-en-fruit-logistica-su-programa-genetico-origen-y-presenta-sus-primeras-variedades-de-arandanos/",
+      "imagen": "img/noticias/camposol.jpg"
+    },
+    {
+      "id": "hortifrut-perdidas-77m",
+      "categoria": "Deuda",
+      "titulo": "Hortifrut reporta pérdidas históricas de US$77 millones y reestructura su operación en Perú",
+      "resumen": "La chilena Hortifrut, la mayor productora mundial de arándanos, cerró 2025 con pérdidas de US$77,7 millones (vs US$45,4M en 2024) tras un castigo extraordinario de US$80,6M para cerrar campos en México y acelerar el recambio varietal en Perú y China. La deuda neta se mantiene en US$776,8 millones.",
+      "fecha": "1 Dic 2025 · Infobae",
+      "fecha_iso": "2025-12-01",
+      "fuente": "Infobae",
+      "url": "https://www.infobae.com/peru/2025/11/29/chilena-hortifrut-la-mayor-productora-y-comercializadora-de-arandanos-del-mundo-reporta-millonarias-perdidas-y-anuncia-cambios-en-peru/",
+      "imagen": "img/noticias/hortifrut.jpg"
     }
   ]
 }
