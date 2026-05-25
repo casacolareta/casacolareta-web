@@ -479,6 +479,45 @@ body {
   letter-spacing: 0.05em;
 }
 
+.noticias-fecha-hoy {
+  display: block;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ocre);
+  margin: -2.5rem auto 3.5rem;
+  letter-spacing: 0.02em;
+}
+
+.noticias-fecha-hoy strong {
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  background: var(--ocre);
+  color: var(--hueso);
+  padding: 0.32rem 0.7rem 0.28rem;
+  margin-right: 0.7rem;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.noticia-fecha--hoy {
+  background: var(--ocre);
+  color: var(--hueso) !important;
+  padding: 0.18rem 0.5rem 0.14rem;
+  border-radius: 2px;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+}
+
+.noticia-fecha--ayer {
+  color: var(--ocre) !important;
+  font-weight: 600 !important;
+}
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -864,8 +903,9 @@ body {
 </section>
 
 <section class="noticias" id="noticias">
-  <div class="noticias-eyebrow">— Movimientos del sector —</div>
-  <h2 class="noticias-titulo">Quién se mueve en el <em>agro peruano.</em></h2>
+  <div class="noticias-eyebrow">— Agrichisme del día —</div>
+  <h2 class="noticias-titulo">Hoy en el <em>agro peruano.</em></h2>
+  <div class="noticias-fecha-hoy"><strong>HOY</strong> <span id="noticias-fecha-larga">lunes, 25 de mayo de 2026</span></div>
   <div class="noticias-grid">
     <a class="noticia" href="https://agraria.pe/noticias/el-nuevo-orden-del-esparrago-ta-export-y-la-elite-que-se-exp-42191" target="_blank" rel="noopener">
       <div class="noticia-imagen">
@@ -1006,6 +1046,25 @@ body {
 
 <script>
 (async function cargarNoticias() {
+  // Fecha de hoy visible en la cabecera (en vivo, no hardcoded)
+  const hoy = new Date();
+  const fechaLarga = hoy.toLocaleDateString('es-PE', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'});
+  const elFechaLarga = document.getElementById('noticias-fecha-larga');
+  if (elFechaLarga) elFechaLarga.textContent = fechaLarga;
+
+  // Etiqueta dinamica por card segun frescura
+  function etiquetaFecha(fecha_iso, fuente) {
+    if (!fecha_iso) return {texto: fuente || '', clase: ''};
+    const d = new Date(fecha_iso + 'T12:00:00');
+    const diffDias = Math.floor((hoy.setHours(0,0,0,0) - d.setHours(0,0,0,0)) / 86400000);
+    if (diffDias === 0) return {texto: 'HOY · ' + (fuente || ''), clase: 'noticia-fecha--hoy'};
+    if (diffDias === 1) return {texto: 'AYER · ' + (fuente || ''), clase: 'noticia-fecha--ayer'};
+    if (diffDias > 1 && diffDias <= 6) return {texto: 'Hace ' + diffDias + ' días · ' + (fuente || ''), clase: ''};
+    const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    const dia = new Date(fecha_iso + 'T12:00:00');
+    return {texto: dia.getDate() + ' ' + meses[dia.getMonth()] + ' ' + dia.getFullYear() + ' · ' + (fuente || ''), clase: ''};
+  }
+
   try {
     const r = await fetch('data/noticias.json?v=' + Date.now(), {cache: 'no-store'});
     if (!r.ok) return;
@@ -1014,26 +1073,28 @@ body {
     const grid = document.querySelector('.noticias-grid');
     if (!grid) return;
     const escape = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    grid.innerHTML = data.noticias.slice(0, 6).map(n => `
+    grid.innerHTML = data.noticias.slice(0, 6).map(n => {
+      const et = etiquetaFecha(n.fecha_iso, n.fuente);
+      return `
       <a class="noticia" href="${escape(n.url)}" target="_blank" rel="noopener">
         <div class="noticia-imagen">
           <img src="${escape(n.imagen)}" alt="${escape(n.titulo)}" loading="lazy">
         </div>
         <div class="noticia-tag">
           <span class="noticia-fruta">${escape(n.categoria)}</span>
-          <span class="noticia-fecha">${escape(n.fecha)}</span>
+          <span class="noticia-fecha ${et.clase}">${escape(et.texto)}</span>
         </div>
         <h3>${escape(n.titulo)}</h3>
         <p>${escape(n.resumen)}</p>
         <span class="noticia-link">Leer en ${escape(n.fuente)}</span>
-      </a>
-    `).join('');
-    // Actualizar el texto "actualizado" en el pie de la sección
+      </a>`;
+    }).join('');
+    // Pie con timestamp en vivo
     const fuente = document.querySelector('.noticias-fuente');
     if (fuente && data.updated_at) {
       const d = new Date(data.updated_at);
-      const fmt = d.toLocaleDateString('es-PE', {day: '2-digit', month: 'long', year: 'numeric'});
-      fuente.textContent = `Actualizado el ${fmt} · Movimientos del sector agroexportador peruano`;
+      const hora = d.toLocaleTimeString('es-PE', {hour: '2-digit', minute: '2-digit', hour12: false});
+      fuente.textContent = `Última revisión: ${hora} · Fuentes: Gestión, Red Agrícola, Agraria.pe, Infobae, comunicados de prensa`;
     }
   } catch (e) {
     // Silencio: si falla, queda el HTML estático como fallback
