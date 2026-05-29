@@ -518,6 +518,26 @@ body {
   font-weight: 600 !important;
 }
 
+/* Calendario de ventana de exportacion */
+.calendario { margin-top: 4.5rem; }
+.cal-titulo { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; line-height: 1.1; color: var(--tinta); margin-bottom: 0.3rem; }
+.cal-titulo em { color: var(--ocre); font-style: italic; }
+.cal-sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 2.2rem; }
+.cal-tabla { display: flex; flex-direction: column; gap: 0.55rem; }
+.cal-fila { display: grid; grid-template-columns: 110px 1fr; align-items: center; gap: 1.2rem; }
+.cal-nombre { font-weight: 600; font-size: 0.95rem; color: var(--tinta); text-align: right; }
+.cal-meses { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; }
+.cal-meses span { height: 24px; border-radius: 4px; background: var(--hueso-2); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #b3ac9e; }
+.cal-cabecera .cal-meses span { background: transparent; color: var(--tinta); font-weight: 700; letter-spacing: 0.02em; }
+.cal-fila:not(.cal-cabecera) .cal-meses span.on { background: var(--ocre); }
+.cal-nota { margin-top: 1.6rem; color: #b3ac9e; font-size: 0.8rem; font-style: italic; }
+@media (max-width: 640px) {
+  .cal-fila { grid-template-columns: 70px 1fr; gap: 0.6rem; }
+  .cal-nombre { font-size: 0.8rem; }
+  .cal-meses { gap: 3px; }
+  .cal-meses span { height: 20px; font-size: 0.6rem; }
+}
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -870,6 +890,43 @@ body {
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">Top mundial<br>en variedad Kent</div>
       </div>
+      <div class="la-item">
+        <div class="la-fruta">Granada</div>
+        <div class="la-meta">Origen Perú</div>
+        <div class="la-dato">Calibre y color<br>de exportación</div>
+      </div>
+    </div>
+
+    <div class="calendario">
+      <div class="cal-titulo">Ventana de envío a <em>Europa</em></div>
+      <div class="cal-sub">En qué meses tenemos cada fruta lista para el comprador europeo.</div>
+      <div class="cal-tabla">
+        <div class="cal-fila cal-cabecera">
+          <div class="cal-nombre"></div>
+          <div class="cal-meses"><span>E</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+        </div>
+        <div class="cal-fila">
+          <div class="cal-nombre">Arándano</div>
+          <div class="cal-meses"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+        </div>
+        <div class="cal-fila">
+          <div class="cal-nombre">Uva</div>
+          <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span></div>
+        </div>
+        <div class="cal-fila">
+          <div class="cal-nombre">Palta</div>
+          <div class="cal-meses"><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="cal-fila">
+          <div class="cal-nombre">Mango</div>
+          <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span></div>
+        </div>
+        <div class="cal-fila">
+          <div class="cal-nombre">Granada</div>
+          <div class="cal-meses"><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="cal-nota">Ventanas orientativas de campaña. La disponibilidad real se confirma semana a semana.</div>
     </div>
   </div>
 </section>
