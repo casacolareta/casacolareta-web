@@ -588,6 +588,33 @@ body {
 .cont-tipo p { font-size: 0.92rem; line-height: 1.6; color: var(--tinta-2); }
 @media (max-width: 720px) { .cont-top { grid-template-columns: 1fr; gap: 1.8rem; margin-bottom: 3rem; } .cont-foto img { height: 240px; } }
 
+/* Productos con su ventana de temporada (filas verticales) */
+.pt-titulo { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--hueso); margin: 0.6rem 0 0.3rem; }
+.pt-titulo em { color: var(--ocre); font-style: italic; }
+.pt-sub { color: rgba(247,245,240,0.55); font-size: 0.98rem; margin-bottom: 3rem; }
+.pt-tabla { display: flex; flex-direction: column; }
+.pt-cabecera, .pt-fila { display: grid; grid-template-columns: 300px 1fr 88px; align-items: center; gap: 1.6rem; }
+.pt-cabecera { padding-bottom: 0.6rem; }
+.pt-fila { padding: 1.4rem 0; border-top: 1px solid rgba(247,245,240,0.12); }
+.pt-prod { display: flex; align-items: center; gap: 1.1rem; }
+.pt-foto img { width: 66px; height: 66px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 16px rgba(0,0,0,0.35); transition: transform 0.4s; }
+.pt-fila:hover .pt-foto img { transform: scale(1.08); }
+.pt-nombre { font-family: var(--serif); font-size: 1.5rem; color: var(--hueso); line-height: 1.1; }
+.pt-dato { font-size: 0.78rem; color: rgba(247,245,240,0.5); margin-top: 0.2rem; }
+.pt-meses { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; }
+.pt-meses span { height: 20px; border-radius: 3px; background: rgba(247,245,240,0.07); }
+.pt-fila .pt-meses span.on { background: var(--ocre); }
+.pt-cabecera .pt-meses span { background: transparent; height: auto; font-size: 0.66rem; color: rgba(247,245,240,0.5); font-weight: 600; text-align: center; }
+.pt-rango { font-size: 0.82rem; font-weight: 600; color: var(--ocre); white-space: nowrap; text-align: right; }
+.pt-cabecera .pt-rango { color: rgba(247,245,240,0.5); }
+.pt-nota { margin-top: 2rem; color: rgba(247,245,240,0.4); font-size: 0.8rem; font-style: italic; }
+@media (max-width: 720px) {
+  .pt-cabecera { display: none; }
+  .pt-fila { grid-template-columns: 1fr; gap: 0.9rem; padding: 1.6rem 0; }
+  .pt-rango { text-align: left; }
+  .pt-meses span { height: 16px; }
+}
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -921,76 +948,56 @@ body {
 <section class="linea-activa" id="linea-activa">
   <div class="linea-activa-inner">
     <div class="la-label">— Línea Activa · Colareta Agroexport —</div>
-    <div class="la-grid">
-      <div class="la-item">
-        <div class="la-foto"><img src="img/productos/arandano.jpg" alt="Arándano" loading="lazy"></div>
-        <div class="la-fruta">Arándano</div>
-        <div class="la-meta">Origen Perú</div>
-        <div class="la-dato">1° exportador<br>mundial</div>
+    <h2 class="pt-titulo">Cinco frutas, su <em>ventana a Europa.</em></h2>
+    <p class="pt-sub">Cada fruta y los meses en que la tenemos lista para el comprador europeo.</p>
+    <div class="pt-tabla">
+      <div class="pt-cabecera">
+        <div class="pt-prod"></div>
+        <div class="pt-meses"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dic</span></div>
+        <div class="pt-rango">Temporada</div>
       </div>
-      <div class="la-item">
-        <div class="la-foto"><img src="img/productos/uva.jpg" alt="Uva" loading="lazy"></div>
-        <div class="la-fruta">Uva</div>
-        <div class="la-meta">Origen Perú</div>
-        <div class="la-dato">1° exportador<br>mundial de uva fresca</div>
+      <div class="pt-fila">
+        <div class="pt-prod">
+          <div class="pt-foto"><img src="img/productos/arandano.jpg" alt="Arándano" loading="lazy"></div>
+          <div class="pt-info"><div class="pt-nombre">Arándano</div><div class="pt-dato">1° exportador mundial</div></div>
+        </div>
+        <div class="pt-meses"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+        <div class="pt-rango">Ago a Ene</div>
       </div>
-      <div class="la-item">
-        <div class="la-foto"><img src="img/productos/palta.jpg" alt="Palta" loading="lazy"></div>
-        <div class="la-fruta">Palta</div>
-        <div class="la-meta">Origen Perú</div>
-        <div class="la-dato">2° exportador<br>mundial</div>
+      <div class="pt-fila">
+        <div class="pt-prod">
+          <div class="pt-foto"><img src="img/productos/uva.jpg" alt="Uva" loading="lazy"></div>
+          <div class="pt-info"><div class="pt-nombre">Uva</div><div class="pt-dato">1° exportador mundial de uva fresca</div></div>
+        </div>
+        <div class="pt-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span></div>
+        <div class="pt-rango">Nov a Mar</div>
       </div>
-      <div class="la-item">
-        <div class="la-foto"><img src="img/productos/mango.jpg" alt="Mango" loading="lazy"></div>
-        <div class="la-fruta">Mango</div>
-        <div class="la-meta">Origen Perú</div>
-        <div class="la-dato">Top mundial<br>en variedad Kent</div>
+      <div class="pt-fila">
+        <div class="pt-prod">
+          <div class="pt-foto"><img src="img/productos/palta.jpg" alt="Palta" loading="lazy"></div>
+          <div class="pt-info"><div class="pt-nombre">Palta</div><div class="pt-dato">2° exportador mundial</div></div>
+        </div>
+        <div class="pt-meses"><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        <div class="pt-rango">Abr a Ago</div>
       </div>
-      <div class="la-item">
-        <div class="la-foto"><img src="img/productos/granada.jpg" alt="Granada" loading="lazy"></div>
-        <div class="la-fruta">Granada</div>
-        <div class="la-meta">Origen Perú</div>
-        <div class="la-dato">Calibre y color<br>de exportación</div>
+      <div class="pt-fila">
+        <div class="pt-prod">
+          <div class="pt-foto"><img src="img/productos/mango.jpg" alt="Mango" loading="lazy"></div>
+          <div class="pt-info"><div class="pt-nombre">Mango</div><div class="pt-dato">Top mundial en variedad Kent</div></div>
+        </div>
+        <div class="pt-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span></div>
+        <div class="pt-rango">Dic a Mar</div>
+      </div>
+      <div class="pt-fila">
+        <div class="pt-prod">
+          <div class="pt-foto"><img src="img/productos/granada.jpg" alt="Granada" loading="lazy"></div>
+          <div class="pt-info"><div class="pt-nombre">Granada</div><div class="pt-dato">Calibre y color de exportación</div></div>
+        </div>
+        <div class="pt-meses"><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pt-rango">Feb a Abr</div>
       </div>
     </div>
-
-    <div class="calendario">
-      <div class="cal-titulo">Ventana de envío a <em>Europa</em></div>
-      <div class="cal-sub">En qué meses tenemos cada fruta lista para el comprador europeo.</div>
-      <div class="cal-tabla">
-        <div class="cal-fila cal-cabecera">
-          <div class="cal-nombre"></div>
-          <div class="cal-meses"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dic</span></div>
-          <div class="cal-rango">Temporada</div>
-        </div>
-        <div class="cal-fila">
-          <div class="cal-nombre">Arándano</div>
-          <div class="cal-meses"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
-          <div class="cal-rango">Ago a Ene</div>
-        </div>
-        <div class="cal-fila">
-          <div class="cal-nombre">Uva</div>
-          <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span></div>
-          <div class="cal-rango">Nov a Mar</div>
-        </div>
-        <div class="cal-fila">
-          <div class="cal-nombre">Palta</div>
-          <div class="cal-meses"><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
-          <div class="cal-rango">Abr a Ago</div>
-        </div>
-        <div class="cal-fila">
-          <div class="cal-nombre">Mango</div>
-          <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span></div>
-          <div class="cal-rango">Dic a Mar</div>
-        </div>
-        <div class="cal-fila">
-          <div class="cal-nombre">Granada</div>
-          <div class="cal-meses"><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="cal-rango">Feb a Abr</div>
-        </div>
-      </div>
-      <div class="cal-nota">Ventanas orientativas de campaña. La disponibilidad real se confirma semana a semana.</div>
-    </div>
+    <div class="pt-nota">Ventanas orientativas de campaña. La disponibilidad real se confirma semana a semana.</div>
   </div>
 </section>
 
@@ -1253,7 +1260,7 @@ body {
 (function animarScroll() {
   if (!('IntersectionObserver' in window)) { return; }
   document.documentElement.classList.add('js-reveal');
-  var sel = '.la-item, .dato, .noticia, .razon, .transp-card, .cal-fila, .section-title, .mercado-titulo, .noticias-titulo, .cal-titulo';
+  var sel = '.pt-fila, .dato, .noticia, .razon, .transp-card, .section-title, .mercado-titulo, .pt-titulo';
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   els.forEach(function (el, i) {
     el.classList.add('reveal');
