@@ -1,38 +1,35 @@
 {
-  "updated_at": "2026-05-25T16:45:00-05:00",
+  "updated_at": "2026-05-28T10:00:00-05:00",
   "noticias": [
     {
-      "id": "conveagro-paro-nacional-2026-05-25",
-      "categoria": "Paro nacional",
-      "titulo": "Conveagro tumba la calma del agro con paro nacional y exige la cabeza del ministro",
-      "resumen": "Estalla hoy lunes. Conveagro convocó paro nacional con arroceros, bananeros, cañicultores y limoneros al frente, exigiendo declaratoria de emergencia agropecuaria por el desplome de precios y el salto del fertilizante. Si el Ejecutivo no responde, piden directamente la cabeza del ministro de Agricultura — en plena efervescencia preelectoral.",
-      "fecha": "Servindi",
+      "id": "arandano-peru-europa-2026-05-27",
+      "categoria": "Mercado europeo",
+      "titulo": "Los arandanos peruanos ganan terreno en los mercados de Europa",
+      "resumen": "Peru consolida a los Paises Bajos como puerta de entrada de su arandano al continente. Los puertos de Amsterdam y Vlissingen concentran la mayor parte del ingreso, senal del peso creciente de la fruta peruana en la temporada europea.",
+      "fecha_iso": "2026-05-27",
+      "fuente": "Agraria.pe",
+      "url": "https://agraria.pe/noticias/arandanos-de-peru-aumentan-su-presencia-en-los-mercados-euro-37654",
+      "imagen": "img/noticias/arandano.webp"
+    },
+    {
+      "id": "peru-lider-arandano-uva-2026-05-26",
+      "categoria": "Liderazgo global",
+      "titulo": "Peru apunta a concentrar gran parte del comercio mundial de arandano y uva",
+      "resumen": "El pais ya lidera las exportaciones globales de uva y arandano y es segundo en palta. El recambio varietal y la ampliacion de hectareas sostienen una proyeccion al alza para las proximas campanas hacia Europa y Asia.",
+      "fecha_iso": "2026-05-26",
+      "fuente": "FreshPlaza",
+      "url": "https://www.freshplaza.es/latin-america/article/9830452/peru-podria-alcanzar-hasta-un-70-80-del-comercio-mundial-de-arandano-y-uva/",
+      "imagen": "img/noticias/hortifrut.jpg"
+    },
+    {
+      "id": "agroexport-recambio-varietal-2026-05-25",
+      "categoria": "Campana 2026",
+      "titulo": "El recambio varietal abre un nuevo ciclo para el arandano y la uva de exportacion",
+      "resumen": "Mas de 13.000 hectareas en juego. La renovacion de variedades busca fruta de mejor calibre y vida util mas larga para llegar en optimas condiciones a los mercados de Europa, donde la uva, el arandano y el mango lideran los envios peruanos.",
       "fecha_iso": "2026-05-25",
-      "fuente": "Servindi",
-      "url": "https://www.servindi.org/seccion-agricultura-actualidad-noticias/21/05/2026/anuncian-paro-agrario-por-crisis-del-sector",
-      "imagen": "img/noticias/conveagro.png"
-    },
-    {
-      "id": "senasa-culantro-chile-2026-05-24",
-      "categoria": "Tensión binacional",
-      "titulo": "Senasa cierra el grifo al culantro chileno con ocho filtros sanitarios y la frontera huele a represalia",
-      "resumen": "Senasa acaba de blindar la frontera contra el culantro chileno: permiso previo, certificado oficial, inspección contra Orobanche ramosa y Systole albipennis, envases nuevos, etiquetado obligatorio y muestreos pagados por el importador. El movimiento llega justo cuando Chile sigue acusando a Perú por la mosca de la fruta — tensión binacional servida.",
-      "fecha": "Gestión",
-      "fecha_iso": "2026-05-24",
-      "fuente": "Gestión",
-      "url": "https://gestion.pe/economia/senasa-peru-endurece-filtros-para-el-culantro-de-chile-estas-son-las-nuevas-reglas-sanitarias-noticia/",
-      "imagen": "img/noticias/senasa.png"
-    },
-    {
-      "id": "midagri-19-mercados-2026-05-22",
-      "categoria": "Propaganda preelectoral",
-      "titulo": "Midagri saca pecho con 19 mercados abiertos en cuatro meses y huele a campaña",
-      "resumen": "El Midagri presume: 19 nuevos accesos sanitarios en lo que va del año. Banano a Argentina, limones a Chile, cítricos a Venezuela, miel a Paraguay y carnes a Singapur. Quedan en mesa China, Japón y Vietnam. Suena a campaña, pero las cifras son reales y abren puerta concreta a las exportadoras medianas.",
-      "fecha": "Infobae",
-      "fecha_iso": "2026-05-22",
-      "fuente": "Infobae",
-      "url": "https://www.infobae.com/peru/2026/05/23/peru-abre-19-nuevos-mercados-para-productos-agropecuarios-en-solo-cuatro-meses-del-2026/",
-      "imagen": "img/noticias/midagri-mercados.jpg"
+      "fuente": "Gestion",
+      "url": "https://gestion.pe/economia/agroexportacion-mas-de-13000-hectareas-en-juego-recambio-varietal-abre-nuevo-ciclo-para-arandanos-y-uvas-noticia/",
+      "imagen": "img/noticias/mango.webp"
     }
   ]
 }
