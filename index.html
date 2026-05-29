@@ -518,24 +518,28 @@ body {
   font-weight: 600 !important;
 }
 
-/* Calendario de ventana de exportacion */
-.calendario { margin-top: 4.5rem; }
-.cal-titulo { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; line-height: 1.1; color: var(--tinta); margin-bottom: 0.3rem; }
+/* Calendario de ventana de exportacion (sobre fondo oscuro) */
+.calendario { margin-top: 4.5rem; max-width: 920px; }
+.cal-titulo { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; line-height: 1.1; color: var(--hueso); margin-bottom: 0.3rem; }
 .cal-titulo em { color: var(--ocre); font-style: italic; }
-.cal-sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 2.2rem; }
-.cal-tabla { display: flex; flex-direction: column; gap: 0.55rem; }
-.cal-fila { display: grid; grid-template-columns: 110px 1fr; align-items: center; gap: 1.2rem; }
-.cal-nombre { font-weight: 600; font-size: 0.95rem; color: var(--tinta); text-align: right; }
+.cal-sub { color: rgba(247,245,240,0.55); font-size: 0.95rem; margin-bottom: 2.4rem; }
+.cal-tabla { display: flex; flex-direction: column; gap: 0.7rem; }
+.cal-fila { display: grid; grid-template-columns: 92px 1fr 84px; align-items: center; gap: 1.1rem; }
+.cal-nombre { font-weight: 600; font-size: 0.95rem; color: var(--hueso); text-align: right; }
 .cal-meses { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; }
-.cal-meses span { height: 24px; border-radius: 4px; background: var(--hueso-2); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #b3ac9e; }
-.cal-cabecera .cal-meses span { background: transparent; color: var(--tinta); font-weight: 700; letter-spacing: 0.02em; }
+.cal-meses span { height: 16px; border-radius: 3px; background: rgba(247,245,240,0.07); }
 .cal-fila:not(.cal-cabecera) .cal-meses span.on { background: var(--ocre); }
-.cal-nota { margin-top: 1.6rem; color: #b3ac9e; font-size: 0.8rem; font-style: italic; }
+.cal-cabecera .cal-meses span { background: transparent; height: auto; font-size: 0.66rem; color: rgba(247,245,240,0.5); font-weight: 600; text-align: center; letter-spacing: 0.01em; }
+.cal-rango { font-size: 0.8rem; font-weight: 600; color: var(--ocre); white-space: nowrap; }
+.cal-cabecera .cal-rango { color: rgba(247,245,240,0.5); }
+.cal-nota { margin-top: 1.8rem; color: rgba(247,245,240,0.4); font-size: 0.8rem; font-style: italic; }
 @media (max-width: 640px) {
-  .cal-fila { grid-template-columns: 70px 1fr; gap: 0.6rem; }
+  .cal-fila { grid-template-columns: 64px 1fr 64px; gap: 0.5rem; }
   .cal-nombre { font-size: 0.8rem; }
   .cal-meses { gap: 3px; }
-  .cal-meses span { height: 20px; font-size: 0.6rem; }
+  .cal-meses span { height: 13px; }
+  .cal-cabecera .cal-meses span { font-size: 0.5rem; }
+  .cal-rango { font-size: 0.68rem; }
 }
 
 .section {
@@ -903,27 +907,33 @@ body {
       <div class="cal-tabla">
         <div class="cal-fila cal-cabecera">
           <div class="cal-nombre"></div>
-          <div class="cal-meses"><span>E</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+          <div class="cal-meses"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dic</span></div>
+          <div class="cal-rango">Temporada</div>
         </div>
         <div class="cal-fila">
           <div class="cal-nombre">Arándano</div>
           <div class="cal-meses"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+          <div class="cal-rango">Ago a Ene</div>
         </div>
         <div class="cal-fila">
           <div class="cal-nombre">Uva</div>
           <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span class="on"></span></div>
+          <div class="cal-rango">Nov a Mar</div>
         </div>
         <div class="cal-fila">
           <div class="cal-nombre">Palta</div>
           <div class="cal-meses"><span></span><span></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+          <div class="cal-rango">Abr a Ago</div>
         </div>
         <div class="cal-fila">
           <div class="cal-nombre">Mango</div>
           <div class="cal-meses"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span></div>
+          <div class="cal-rango">Dic a Mar</div>
         </div>
         <div class="cal-fila">
           <div class="cal-nombre">Granada</div>
           <div class="cal-meses"><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="cal-rango">Feb a Abr</div>
         </div>
       </div>
       <div class="cal-nota">Ventanas orientativas de campaña. La disponibilidad real se confirma semana a semana.</div>
