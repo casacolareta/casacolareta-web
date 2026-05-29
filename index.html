@@ -574,7 +574,7 @@ body {
 @media (max-width: 640px) { .transporte { padding: 5rem 1.5rem; } .transporte-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
 
 /* Movimiento al hacer scroll */
-.js-reveal .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.js-reveal .reveal { opacity: 0; transform: translateY(42px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
 .js-reveal .reveal.visible { opacity: 1; transform: none; }
 
 .section {
@@ -893,7 +893,7 @@ body {
     <li><a href="#mercado">Mercado</a></li>
     <li><a href="#noticias">Noticias</a></li>
     <li><a href="#transporte">Cómo llega</a></li>
-    <li><a href="#por-que">Por qué nosotros</a></li>
+    <li><a href="#contenedor">El contenedor</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -1084,24 +1084,24 @@ body {
   </div>
 </section>
 
-<section class="section" id="por-que">
-  <div class="section-num">— 02 · Por qué nosotros</div>
-  <h2 class="section-title">Tres razones, sin <em>relleno.</em></h2>
+<section class="section" id="contenedor">
+  <div class="section-num">— 02 · El contenedor</div>
+  <h2 class="section-title">Frío preciso, fruta <em>intacta.</em></h2>
   <div class="razones">
     <div class="razon">
-      <div class="razon-num">i.</div>
-      <h3 class="razon-titulo">Doble orilla</h3>
-      <p class="razon-texto">Peruano de origen, europeo de oficio. Vivo en Barcelona desde hace años trabajando en exportación. Hablamos los dos idiomas comerciales: el del campo peruano y el del importador europeo.</p>
+      <div class="razon-num">01</div>
+      <h3 class="razon-titulo">Reefer en atmósfera controlada</h3>
+      <p class="razon-texto">Contenedor refrigerado de 40 pies que regula el oxígeno y el CO2 para frenar la maduración. Así la palta viaja hasta 40 días y llega firme a Europa.</p>
     </div>
     <div class="razon">
-      <div class="razon-num">ii.</div>
-      <h3 class="razon-titulo">Sin intermediarios escondidos</h3>
-      <p class="razon-texto">Trabajamos a comisión, transparente. Usted sabe lo que paga el comprador, sabe lo que recibe el productor y sabe lo que cobramos nosotros. No hay sobreprecio camuflado en el flete ni en la calidad.</p>
+      <div class="razon-num">02</div>
+      <h3 class="razon-titulo">Cada fruta a su temperatura</h3>
+      <p class="razon-texto">Arándano y uva cerca de 0 grados, palta entre 4 y 7, mango entre 10 y 13. Frío exacto desde el packing peruano hasta el almacén europeo, sin cortes en la cadena.</p>
     </div>
     <div class="razon">
-      <div class="razon-num">iii.</div>
-      <h3 class="razon-titulo">Casa, no startup</h3>
-      <p class="razon-texto">No buscamos crecer rápido y vender. Buscamos construir una casa de comercio que dure. Eso cambia cómo elegimos a los productores con los que trabajamos y a los compradores que aceptamos.</p>
+      <div class="razon-num">03</div>
+      <h3 class="razon-titulo">Volumen serio por viaje</h3>
+      <p class="razon-texto">Hasta 20 pallets y cerca de 24 toneladas por contenedor, con registro de temperatura durante todo el trayecto. La fruta llega monitoreada de punta a punta.</p>
     </div>
   </div>
 </section>
@@ -1223,21 +1223,23 @@ body {
 
 /* Movimiento: los elementos aparecen al entrar en pantalla */
 (function animarScroll() {
-  if (!('IntersectionObserver' in window)) return;
+  if (!('IntersectionObserver' in window)) { return; }
   document.documentElement.classList.add('js-reveal');
-  const sel = '.la-item, .dato, .noticia, .razon, .transp-card, .cal-fila, .section-title, .mercado-titulo, .noticias-titulo, .cal-titulo, .qh-lead, .contacto-inner > *';
-  const els = Array.from(document.querySelectorAll(sel));
-  els.forEach(el => el.classList.add('reveal'));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+  var sel = '.la-item, .dato, .noticia, .razon, .transp-card, .cal-fila, .section-title, .mercado-titulo, .noticias-titulo, .cal-titulo';
+  var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+  els.forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = ((i % 4) * 0.09) + 's';
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
       if (e.isIntersecting) {
-        e.target.style.transitionDelay = Math.min(e.intersectionRatio, 1) * 0 + (Array.prototype.indexOf.call(e.target.parentNode.children, e.target) % 5) * 0.08 + 's';
         e.target.classList.add('visible');
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(el => io.observe(el));
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { io.observe(el); });
 })();
 </script>
 
