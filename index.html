@@ -556,6 +556,27 @@ body {
   .cal-rango { font-size: 0.68rem; }
 }
 
+/* Transporte y tiempos */
+.transporte { background: var(--hueso-2); padding: 7rem 3rem; }
+.transporte .qh-inner { max-width: 1000px; margin: 0 auto; }
+.transporte-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+.transp-card { background: var(--hueso); border: 1px solid var(--linea); border-radius: 6px; padding: 2.6rem 2.2rem; }
+.transp-icono { color: var(--ocre); width: 54px; height: 54px; margin-bottom: 1.3rem; }
+.transp-icono svg { width: 100%; height: 100%; }
+.transp-modo { font-family: var(--serif); font-size: 1.7rem; color: var(--tinta); margin-bottom: 0.1rem; }
+.transp-dias { font-family: var(--serif); font-size: 3.2rem; color: var(--ocre); line-height: 1; margin-bottom: 1.2rem; }
+.transp-dias span { font-size: 1.05rem; color: var(--tinta-2); }
+.transp-barra { height: 8px; background: rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; margin-bottom: 1.4rem; }
+.transp-barra span { display: block; height: 100%; width: 0; background: var(--ocre); border-radius: 4px; transition: width 1.5s cubic-bezier(0.16,1,0.3,1); }
+.transp-card.visible .transp-barra span { width: var(--w); }
+.transp-card p { font-size: 0.94rem; line-height: 1.65; color: var(--tinta-2); }
+.transporte-nota { margin-top: 2.4rem; font-size: 0.82rem; color: var(--tinta-2); font-style: italic; }
+@media (max-width: 640px) { .transporte { padding: 5rem 1.5rem; } .transporte-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+/* Movimiento al hacer scroll */
+.js-reveal .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.js-reveal .reveal.visible { opacity: 1; transform: none; }
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -871,7 +892,7 @@ body {
     <li><a href="#linea-activa">Productos</a></li>
     <li><a href="#mercado">Mercado</a></li>
     <li><a href="#noticias">Noticias</a></li>
-    <li><a href="#que-hacemos">Qué hacemos</a></li>
+    <li><a href="#transporte">Cómo llega</a></li>
     <li><a href="#por-que">Por qué nosotros</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
@@ -1035,20 +1056,31 @@ body {
   <div class="noticias-fuente">Actualidad del sector agroexportador peruano hacia Europa · Fuentes: Agraria.pe, FreshPlaza, Gestion</div>
 </section>
 
-<section class="que-hacemos" id="que-hacemos">
+<section class="transporte" id="transporte">
   <div class="qh-inner">
-    <div class="section-num">— 01 · Qué hacemos</div>
-    <h2 class="section-title">Una casa, varios <em>oficios.</em></h2>
-    <div class="qh-grid">
-      <div class="qh-lead">
-        Casa Colareta nace como casa de comercio, no como empresa de un solo producto. La pensamos para que <em>aguante el tiempo</em> y para alojar bajo un mismo techo distintas líneas de negocio a lo largo de los años.
+    <div class="section-num">— 01 · Cómo llega a Europa</div>
+    <h2 class="section-title">Del Callao a tu <em>almacén europeo.</em></h2>
+    <div class="transporte-grid">
+      <div class="transp-card" style="--w:100%">
+        <div class="transp-icono">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30l3 9h30l3-9"/><path d="M9 30V18h30v12"/><path d="M24 18V8M16 13h16"/><path d="M6 30h36"/></svg>
+        </div>
+        <div class="transp-modo">Barco</div>
+        <div class="transp-dias">25 <span>días</span></div>
+        <div class="transp-barra"><span></span></div>
+        <p>Contenedor reefer en atmósfera controlada. La vía del volumen para palta, uva, granada y arándano que aguantan el viaje. Salida semanal desde Callao y Paita. Coste por kilo bajo.</p>
       </div>
-      <div class="qh-body">
-        <p>La submarca activa hoy es <strong>Colareta Agroexport</strong>. Trabajamos como agente comercial de productores peruanos en Europa, con foco en cuatro frutas: arándano, palta, mango y uva.</p>
-        <p>No somos productores. No tenemos cultivos ni almacenes. Somos el puente comercial. Esa es la regla, y por eso somos honestos sobre lo que aportamos: contacto directo, criterio de compra y un trato europeo de quien vive y trabaja en Barcelona.</p>
-        <p>El nombre <em>"Casa"</em> no es decorativo. Es una promesa de continuidad. En su momento podrán colgar de aquí otras líneas: café, vinos, logística. La marca raíz se queda.</p>
+      <div class="transp-card" style="--w:9%">
+        <div class="transp-icono">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26l40-14-14 40-6-16-16-6z"/><path d="M30 18L18 30"/></svg>
+        </div>
+        <div class="transp-modo">Avión</div>
+        <div class="transp-dias">2 <span>días</span></div>
+        <div class="transp-barra"><span></span></div>
+        <p>Vía exprés para la fruta más delicada y las primeras semanas de campaña, cuando Europa premia la frescura. Llega casi recién cosechada.</p>
       </div>
     </div>
+    <div class="transporte-nota">Tiempos orientativos hasta puerto europeo (Rotterdam, Amberes, Algeciras).</div>
   </div>
 </section>
 
@@ -1187,6 +1219,25 @@ body {
   } catch (e) {
     // Silencio: si falla, queda el HTML estático como fallback
   }
+})();
+
+/* Movimiento: los elementos aparecen al entrar en pantalla */
+(function animarScroll() {
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js-reveal');
+  const sel = '.la-item, .dato, .noticia, .razon, .transp-card, .cal-fila, .section-title, .mercado-titulo, .noticias-titulo, .cal-titulo, .qh-lead, .contacto-inner > *';
+  const els = Array.from(document.querySelectorAll(sel));
+  els.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = Math.min(e.intersectionRatio, 1) * 0 + (Array.prototype.indexOf.call(e.target.parentNode.children, e.target) % 5) * 0.08 + 's';
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
 })();
 </script>
 
