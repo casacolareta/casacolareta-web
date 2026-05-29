@@ -242,6 +242,10 @@ body {
 .la-item:last-child { border-right: none; }
 .la-item:hover { background: rgba(163, 103, 42, 0.08); }
 
+.la-foto { display: flex; justify-content: center; margin-bottom: 1.3rem; }
+.la-foto img { width: 108px; height: 108px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 22px rgba(0,0,0,0.35); transition: transform 0.4s; }
+.la-item:hover .la-foto img { transform: scale(1.05); }
+
 .la-fruta {
   font-family: var(--serif);
   font-size: 2rem;
@@ -876,26 +880,31 @@ body {
     <div class="la-label">— Línea Activa · Colareta Agroexport —</div>
     <div class="la-grid">
       <div class="la-item">
+        <div class="la-foto"><img src="img/productos/arandano.jpg" alt="Arándano" loading="lazy"></div>
         <div class="la-fruta">Arándano</div>
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">1° exportador<br>mundial</div>
       </div>
       <div class="la-item">
+        <div class="la-foto"><img src="img/productos/uva.jpg" alt="Uva" loading="lazy"></div>
         <div class="la-fruta">Uva</div>
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">1° exportador<br>mundial de uva fresca</div>
       </div>
       <div class="la-item">
+        <div class="la-foto"><img src="img/productos/palta.jpg" alt="Palta" loading="lazy"></div>
         <div class="la-fruta">Palta</div>
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">2° exportador<br>mundial</div>
       </div>
       <div class="la-item">
+        <div class="la-foto"><img src="img/productos/mango.jpg" alt="Mango" loading="lazy"></div>
         <div class="la-fruta">Mango</div>
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">Top mundial<br>en variedad Kent</div>
       </div>
       <div class="la-item">
+        <div class="la-foto"><img src="img/productos/granada.jpg" alt="Granada" loading="lazy"></div>
         <div class="la-fruta">Granada</div>
         <div class="la-meta">Origen Perú</div>
         <div class="la-dato">Calibre y color<br>de exportación</div>
