@@ -577,6 +577,17 @@ body {
 .js-reveal .reveal { opacity: 0; transform: translateY(42px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
 .js-reveal .reveal.visible { opacity: 1; transform: none; }
 
+/* El contenedor: foto + tipos de reefer */
+.cont-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin: 2.5rem 0 4rem; }
+.cont-foto img { width: 100%; height: 330px; object-fit: cover; border-radius: 6px; box-shadow: 0 12px 32px rgba(0,0,0,0.14); }
+.cont-foto figcaption { margin-top: 0.7rem; font-size: 0.78rem; color: var(--tinta-2); font-style: italic; }
+.cont-intro { font-size: 1.05rem; line-height: 1.7; color: var(--tinta); margin-bottom: 1.6rem; }
+.cont-tipo { padding: 1.1rem 0; border-top: 1px solid var(--linea); }
+.cont-tipo:last-child { border-bottom: 1px solid var(--linea); }
+.cont-tipo h4 { font-family: var(--serif); font-size: 1.3rem; color: var(--ocre); margin-bottom: 0.25rem; font-weight: 500; }
+.cont-tipo p { font-size: 0.92rem; line-height: 1.6; color: var(--tinta-2); }
+@media (max-width: 720px) { .cont-top { grid-template-columns: 1fr; gap: 1.8rem; margin-bottom: 3rem; } .cont-foto img { height: 240px; } }
+
 .section {
   padding: 7rem 3rem;
   max-width: 1300px;
@@ -1087,21 +1098,38 @@ body {
 <section class="section" id="contenedor">
   <div class="section-num">— 02 · El contenedor</div>
   <h2 class="section-title">Frío preciso, fruta <em>intacta.</em></h2>
+  <div class="cont-top">
+    <figure class="cont-foto">
+      <img src="img/productos/reefer.jpg" alt="Contenedor reefer refrigerado" loading="lazy">
+      <figcaption>Contenedor reefer: refrigerado, sellado y monitoreado de origen a destino.</figcaption>
+    </figure>
+    <div class="cont-tipos">
+      <p class="cont-intro">No todos los reefer son iguales. Según el viaje se elige el tipo:</p>
+      <div class="cont-tipo">
+        <h4>Reefer estándar</h4>
+        <p>Frío constante a la temperatura exacta de cada fruta. Ideal para tránsitos más cortos o fruta que aguanta bien el viaje.</p>
+      </div>
+      <div class="cont-tipo">
+        <h4>Atmósfera controlada</h4>
+        <p>Frío más regulación de oxígeno y CO2 para frenar la maduración. La opción para los viajes largos a Europa: la palta y el arándano llegan firmes tras semanas de mar.</p>
+      </div>
+    </div>
+  </div>
   <div class="razones">
     <div class="razon">
       <div class="razon-num">01</div>
-      <h3 class="razon-titulo">Reefer en atmósfera controlada</h3>
-      <p class="razon-texto">Contenedor refrigerado de 40 pies que regula el oxígeno y el CO2 para frenar la maduración. Así la palta viaja hasta 40 días y llega firme a Europa.</p>
+      <h3 class="razon-titulo">Cada fruta a su temperatura</h3>
+      <p class="razon-texto">Arándano y uva cerca de 0 grados, palta entre 4 y 7, mango entre 10 y 13. Frío exacto desde el packing peruano hasta el almacén europeo.</p>
     </div>
     <div class="razon">
       <div class="razon-num">02</div>
-      <h3 class="razon-titulo">Cada fruta a su temperatura</h3>
-      <p class="razon-texto">Arándano y uva cerca de 0 grados, palta entre 4 y 7, mango entre 10 y 13. Frío exacto desde el packing peruano hasta el almacén europeo, sin cortes en la cadena.</p>
+      <h3 class="razon-titulo">Volumen serio por viaje</h3>
+      <p class="razon-texto">Hasta 20 pallets y cerca de 24 toneladas por contenedor. La cantidad que un comprador europeo necesita para mover una campaña.</p>
     </div>
     <div class="razon">
       <div class="razon-num">03</div>
-      <h3 class="razon-titulo">Volumen serio por viaje</h3>
-      <p class="razon-texto">Hasta 20 pallets y cerca de 24 toneladas por contenedor, con registro de temperatura durante todo el trayecto. La fruta llega monitoreada de punta a punta.</p>
+      <h3 class="razon-titulo">Monitoreado de punta a punta</h3>
+      <p class="razon-texto">Registro de temperatura durante todo el trayecto. Si algo se sale de rango, se sabe. La fruta llega con su historia de frío documentada.</p>
     </div>
   </div>
 </section>
