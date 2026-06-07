@@ -893,6 +893,194 @@ body {
   font-size: 0.95rem;
 }
 
+/* Simulador de piloto */
+.piloto { padding: 7rem 3rem; max-width: 1100px; margin: 0 auto; }
+.piloto-intro { font-size: 1.02rem; line-height: 1.75; color: var(--tinta-2); max-width: 640px; margin-bottom: 3.5rem; }
+.piloto-config { display: flex; flex-direction: column; gap: 2.4rem; margin-bottom: 3.5rem; }
+.piloto-step { border-top: 1px solid var(--linea); padding-top: 1.8rem; }
+.piloto-step-num { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--ocre); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+.piloto-step-label { font-family: var(--serif); font-size: 1.4rem; color: var(--tinta); margin-bottom: 1.4rem; line-height: 1.2; }
+.piloto-options { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.piloto-opt {
+  background: transparent;
+  border: 1px solid var(--linea);
+  color: var(--tinta-2);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.01em;
+}
+.piloto-opt:hover { border-color: var(--ocre); color: var(--ocre); }
+.piloto-opt.active { background: var(--tinta); color: var(--hueso); border-color: var(--tinta); }
+.piloto-select {
+  width: 100%;
+  max-width: 320px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  padding: 0.75rem 2.4rem 0.75rem 1rem;
+  background-color: var(--hueso);
+  border: 1px solid var(--linea);
+  color: var(--tinta);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3e%3cpath d='M1 1l5 5 5-5' stroke='%23a3672a' stroke-width='1.4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+.piloto-select:focus { border-color: var(--ocre); outline: none; }
+.piloto-plan {
+  background: var(--hueso-2);
+  border: 1px solid var(--linea);
+  padding: 3rem 2.6rem;
+  margin-bottom: 2.4rem;
+  min-height: 200px;
+}
+.piloto-plan-vacio {
+  color: var(--tinta-3);
+  font-style: italic;
+  text-align: center;
+  padding: 3rem 0;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+.piloto-plan-header { border-bottom: 1px solid var(--linea); padding-bottom: 1.6rem; margin-bottom: 1.8rem; }
+.piloto-plan-titulo { font-family: var(--serif); font-size: 1.7rem; color: var(--tinta); margin-bottom: 0.3rem; line-height: 1.2; }
+.piloto-plan-titulo em { color: var(--ocre); font-style: italic; }
+.piloto-plan-sub { font-size: 0.92rem; color: var(--tinta-3); }
+.piloto-plan-llegada {
+  background: var(--tinta);
+  color: var(--hueso);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.piloto-plan-llegada-label { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ocre); margin-bottom: 0.3rem; }
+.piloto-plan-llegada-fecha { font-family: var(--serif); font-size: 1.6rem; color: var(--hueso); }
+.piloto-plan-llegada-fecha em { font-style: italic; color: var(--ocre); }
+.piloto-plan-llegada-fecha span { font-size: 0.85rem; color: rgba(247,245,240,0.6); font-family: var(--sans); }
+.piloto-timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  margin-bottom: 2.4rem;
+  position: relative;
+}
+.piloto-timeline::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--linea);
+}
+.piloto-tl-paso { text-align: center; position: relative; }
+.piloto-tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ocre);
+  margin: 12px auto 0.7rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--hueso-2);
+}
+.piloto-tl-label { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tinta-3); margin-bottom: 0.2rem; }
+.piloto-tl-dato { font-family: var(--serif); font-size: 0.95rem; color: var(--tinta); }
+.piloto-grid-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 1.6rem; }
+.piloto-info-bloque { border-top: 1px solid var(--linea); padding-top: 1.2rem; }
+.piloto-info-titulo { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ocre); margin-bottom: 0.8rem; }
+.piloto-info-fila { display: flex; justify-content: space-between; align-items: baseline; padding: 0.45rem 0; font-size: 0.9rem; color: var(--tinta-3); gap: 1rem; border-bottom: 1px dashed var(--linea); }
+.piloto-info-fila:last-child { border-bottom: none; }
+.piloto-info-fila strong { color: var(--tinta); font-weight: 500; text-align: right; }
+.piloto-docs-lista { list-style: none; margin: 0; padding: 0; }
+.piloto-docs-lista li { padding: 0.5rem 0; font-size: 0.9rem; color: var(--tinta-2); border-bottom: 1px dashed var(--linea); }
+.piloto-docs-lista li:last-child { border-bottom: none; }
+.piloto-docs-lista li::before { content: '— '; color: var(--ocre); margin-right: 0.3rem; }
+.piloto-warning {
+  background: rgba(163, 103, 42, 0.08);
+  border-left: 3px solid var(--ocre);
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--tinta-2);
+  line-height: 1.55;
+}
+.piloto-warning strong { color: var(--ocre); font-weight: 500; }
+.piloto-form { background: var(--tinta); color: var(--hueso); padding: 3rem 2.6rem; border: 1px solid var(--tinta); }
+.piloto-form-titulo { font-family: var(--serif); font-size: 1.6rem; color: var(--hueso); margin-bottom: 0.4rem; line-height: 1.3; }
+.piloto-form-titulo em { color: var(--ocre); font-style: italic; }
+.piloto-form-sub { font-size: 0.92rem; color: rgba(247,245,240,0.65); margin-bottom: 1.6rem; }
+.piloto-form-resumen {
+  font-size: 0.88rem;
+  color: rgba(247,245,240,0.78);
+  margin-bottom: 1.8rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(247,245,240,0.05);
+  border-left: 2px solid var(--ocre);
+  line-height: 1.55;
+}
+.piloto-form-resumen strong { color: var(--ocre); font-weight: 500; }
+.piloto-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 1.4rem; }
+.piloto-form-grid > div { display: flex; flex-direction: column; }
+.piloto-form label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 0.5rem;
+}
+.piloto-form input,
+.piloto-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(247,245,240,0.2);
+  padding: 0.55rem 0;
+  color: var(--hueso);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.piloto-form input:focus,
+.piloto-form textarea:focus { border-bottom-color: var(--ocre); }
+.piloto-form textarea { resize: vertical; min-height: 90px; margin-bottom: 1.4rem; }
+.piloto-form button {
+  background: var(--ocre);
+  color: var(--hueso);
+  border: 1px solid var(--ocre);
+  padding: 0.95rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+.piloto-form button:hover { background: transparent; color: var(--ocre); }
+
+@media (max-width: 720px) {
+  .piloto { padding: 5rem 1.5rem; }
+  .piloto-plan { padding: 2rem 1.4rem; }
+  .piloto-timeline { grid-template-columns: repeat(3, 1fr); gap: 1.4rem 0.4rem; }
+  .piloto-timeline::before { display: none; }
+  .piloto-grid-info { grid-template-columns: 1fr; gap: 1.4rem; }
+  .piloto-form { padding: 2rem 1.4rem; }
+  .piloto-form-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .piloto-plan-llegada { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .piloto-plan-llegada-fecha { font-size: 1.35rem; }
+}
+
 @media (max-width: 900px) {
   .nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
@@ -932,6 +1120,7 @@ body {
     <li><a href="#noticias">Noticias</a></li>
     <li><a href="#transporte">Cómo llega</a></li>
     <li><a href="#contenedor">El contenedor</a></li>
+    <li><a href="#piloto">Tu piloto</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -1141,10 +1330,122 @@ body {
   </div>
 </section>
 
+<section class="piloto" id="piloto">
+  <div class="section-num">— 03 · Tu primer piloto</div>
+  <h2 class="section-title">Configura tu piloto, <em>recibe tu plan.</em></h2>
+  <p class="piloto-intro">
+    Eliges fruta, puerto, volumen y fecha. Te devolvemos el calendario realista, los datos del reefer y los documentos que vas a necesitar. Si te encaja, cotizamos al precio exacto del día.
+  </p>
+
+  <div class="piloto-config">
+    <div class="piloto-step">
+      <div class="piloto-step-num">01</div>
+      <div class="piloto-step-label">¿Qué fruta?</div>
+      <div class="piloto-options" id="piloto-productos">
+        <button type="button" class="piloto-opt" data-prod="arandano">Arándano</button>
+        <button type="button" class="piloto-opt" data-prod="uva">Uva (Red Globe, Sugraone)</button>
+        <button type="button" class="piloto-opt" data-prod="palta">Palta Hass</button>
+        <button type="button" class="piloto-opt" data-prod="mango">Mango Kent</button>
+        <button type="button" class="piloto-opt" data-prod="granada">Granada</button>
+      </div>
+    </div>
+
+    <div class="piloto-step">
+      <div class="piloto-step-num">02</div>
+      <div class="piloto-step-label">¿A qué puerto?</div>
+      <div class="piloto-options" id="piloto-destinos">
+        <button type="button" class="piloto-opt" data-dest="rotterdam">Rotterdam · NL</button>
+        <button type="button" class="piloto-opt" data-dest="algeciras">Algeciras · ES</button>
+        <button type="button" class="piloto-opt" data-dest="antwerp">Antwerp · BE</button>
+        <button type="button" class="piloto-opt" data-dest="hamburg">Hamburg · DE</button>
+        <button type="button" class="piloto-opt" data-dest="genova">Génova · IT</button>
+        <button type="button" class="piloto-opt" data-dest="felixstowe">Felixstowe · UK</button>
+      </div>
+    </div>
+
+    <div class="piloto-step">
+      <div class="piloto-step-num">03</div>
+      <div class="piloto-step-label">¿Qué volumen?</div>
+      <div class="piloto-options" id="piloto-volumenes">
+        <button type="button" class="piloto-opt" data-vol="1">1 contenedor reefer 40'</button>
+        <button type="button" class="piloto-opt" data-vol="2-5">2 a 5 contenedores</button>
+        <button type="button" class="piloto-opt" data-vol="6+">Más de 5 contenedores</button>
+        <button type="button" class="piloto-opt" data-vol="lcl">Pallets sueltos (LCL)</button>
+      </div>
+    </div>
+
+    <div class="piloto-step">
+      <div class="piloto-step-num">04</div>
+      <div class="piloto-step-label">¿Cuándo lo quieres en tu almacén?</div>
+      <select class="piloto-select" id="piloto-cuando">
+        <option value="">Selecciona el mes</option>
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="piloto-plan" id="piloto-plan">
+    <div class="piloto-plan-vacio" id="piloto-vacio">Completa los cuatro pasos para ver tu plan.</div>
+    <div id="piloto-plan-real" hidden></div>
+  </div>
+
+  <form class="piloto-form" id="piloto-form" action="https://api.web3forms.com/submit" method="POST" hidden>
+    <input type="hidden" name="access_key" value="9c2d6efb-5ee8-4bff-8461-6d0cc1c64fc5">
+    <input type="hidden" name="subject" value="Cotización de piloto · casacolareta.com">
+    <input type="hidden" name="from_name" value="Configurador de piloto">
+    <input type="hidden" name="producto" id="form-producto">
+    <input type="hidden" name="destino" id="form-destino">
+    <input type="hidden" name="volumen" id="form-volumen">
+    <input type="hidden" name="mes_llegada" id="form-cuando">
+    <input type="checkbox" name="botcheck" style="display:none">
+
+    <div class="piloto-form-titulo">Recibe la <em>cotización exacta</em> para esta configuración.</div>
+    <div class="piloto-form-sub">Te responde Pedro Gonzalez personalmente, normalmente el mismo día.</div>
+
+    <div class="piloto-form-resumen" id="piloto-form-resumen"></div>
+
+    <div class="piloto-form-grid">
+      <div>
+        <label for="piloto-nombre">Nombre</label>
+        <input type="text" id="piloto-nombre" name="nombre" required>
+      </div>
+      <div>
+        <label for="piloto-email">Correo</label>
+        <input type="email" id="piloto-email" name="email" required>
+      </div>
+      <div>
+        <label for="piloto-empresa">Empresa</label>
+        <input type="text" id="piloto-empresa" name="empresa">
+      </div>
+      <div>
+        <label for="piloto-pais">País</label>
+        <input type="text" id="piloto-pais" name="pais">
+      </div>
+    </div>
+    <div>
+      <label for="piloto-notas">Notas (calibre, packaging, certificaciones específicas)</label>
+      <textarea id="piloto-notas" name="notas"></textarea>
+    </div>
+
+    <button type="submit">Recibir cotización exacta</button>
+  </form>
+</section>
+
 <section class="contacto" id="contacto">
   <div class="contacto-inner">
     <div>
-      <div class="section-num">— 03 · Contacto</div>
+      <div class="section-num">— 04 · Contacto</div>
       <h2>Hablemos <em>derecho.</em></h2>
       <p>Si es productor peruano y busca colocar su fruta en Europa, escriba. Si es importador europeo y busca origen Perú con un interlocutor en zona horaria europea, escriba también. Respondo siempre.</p>
       <div class="contacto-meta">
@@ -1277,6 +1578,238 @@ body {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function (el) { io.observe(el); });
+})();
+
+/* Simulador de piloto */
+(function piloto() {
+  var PRODUCTOS = {
+    arandano: {
+      nombre: 'Arándano',
+      variedades: 'Ventura, Biloxi, Sekoya, Atlasblue',
+      temp: '−0.5 a 0 °C',
+      atmosfera: 'Atmósfera controlada (CA) recomendada',
+      vida: '35 a 40 días con CA',
+      packaging: 'Clamshell 125 g + master box',
+      kg_cont: '~6,000 kg por contenedor 40\' reefer',
+      meses_dispo: [1, 8, 9, 10, 11, 12],
+      temporada_txt: 'Agosto a Enero (pico Set–Nov)',
+      docs_extra: ['Programa de exportación SENASA para arándano', 'Certificado de pre-cooling de campo']
+    },
+    uva: {
+      nombre: 'Uva',
+      variedades: 'Red Globe, Sugraone, Crimson, Sweet Globe',
+      temp: '−0.5 a 0 °C',
+      atmosfera: 'Frío estándar + pads de SO2 embebidos',
+      vida: '60 a 75 días con SO2',
+      packaging: 'Cajón con inserto, 8.2 kg',
+      kg_cont: '~19,500 kg por contenedor 40\' reefer (≈2,400 cajas)',
+      meses_dispo: [1, 2, 3, 11, 12],
+      temporada_txt: 'Noviembre a Marzo (pico Dic–Feb)',
+      docs_extra: ['Confirmación de SO2 pads embebidos', 'Certificado de pre-cooling']
+    },
+    palta: {
+      nombre: 'Palta Hass',
+      variedades: 'Hass (calibres 12 a 30)',
+      temp: '5 a 6 °C en tránsito',
+      atmosfera: 'CA recomendada para Europa',
+      vida: '28 a 35 días con CA',
+      packaging: 'Caja 4 kg estándar Europa',
+      kg_cont: '~22,000 kg por contenedor 40\' reefer (≈5,500 cajas)',
+      meses_dispo: [4, 5, 6, 7, 8],
+      temporada_txt: 'Abril a Agosto (pico May–Jul)',
+      docs_extra: ['Programa de exportación SENASA para palta Hass', 'Certificado de pre-cooling']
+    },
+    mango: {
+      nombre: 'Mango Kent',
+      variedades: 'Kent, Tommy Atkins',
+      temp: '8 a 10 °C (nunca por debajo)',
+      atmosfera: 'Aire normal, sin CA',
+      vida: '21 a 28 días',
+      packaging: 'Caja 4.2 kg',
+      kg_cont: '~21,000 kg por contenedor 40\' reefer (≈5,000 cajas)',
+      meses_dispo: [12, 1, 2, 3],
+      temporada_txt: 'Diciembre a Marzo (pico Ene–Feb)',
+      docs_extra: ['Tratamiento hidrotérmico si el destino lo exige']
+    },
+    granada: {
+      nombre: 'Granada',
+      variedades: 'Wonderful, Acco',
+      temp: '5 a 7 °C',
+      atmosfera: 'CA opcional para tránsitos largos',
+      vida: '60 a 90 días con frío exacto',
+      packaging: 'Caja 4 kg / 10 kg',
+      kg_cont: '~20,000 kg por contenedor 40\' reefer',
+      meses_dispo: [2, 3, 4],
+      temporada_txt: 'Febrero a Abril',
+      docs_extra: ['Programa de exportación SENASA para granada']
+    }
+  };
+
+  var DESTINOS = {
+    rotterdam:  { nombre: 'Rotterdam',  pais: 'Países Bajos', dias_min: 25, dias_max: 28, naviera: 'Hapag-Lloyd, Maersk, MSC', frecuencia: 'Salidas semanales desde Callao' },
+    algeciras:  { nombre: 'Algeciras',  pais: 'España',       dias_min: 22, dias_max: 25, naviera: 'Maersk, MSC, CMA CGM',     frecuencia: 'Salidas semanales, ruta más corta a Europa' },
+    antwerp:    { nombre: 'Antwerp',    pais: 'Bélgica',      dias_min: 26, dias_max: 28, naviera: 'Hapag-Lloyd, MSC',         frecuencia: 'Salidas semanales' },
+    hamburg:    { nombre: 'Hamburg',    pais: 'Alemania',     dias_min: 28, dias_max: 30, naviera: 'Hapag-Lloyd, Maersk',      frecuencia: 'Salidas semanales' },
+    genova:     { nombre: 'Génova',     pais: 'Italia',       dias_min: 24, dias_max: 26, naviera: 'MSC, CMA CGM',             frecuencia: 'Salidas semanales con transbordo en Algeciras' },
+    felixstowe: { nombre: 'Felixstowe', pais: 'Reino Unido',  dias_min: 26, dias_max: 28, naviera: 'Maersk, Hapag-Lloyd',      frecuencia: 'Salidas semanales vía Rotterdam' }
+  };
+
+  var VOLUMENES = {
+    '1':   '1 contenedor reefer 40\'',
+    '2-5': '2 a 5 contenedores reefer 40\'',
+    '6+':  'Más de 5 contenedores',
+    'lcl': 'Pallets sueltos (LCL)'
+  };
+
+  var MESES_NOMBRE = ['', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  var MESES_CORTO  = ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dic'];
+
+  var DOCS_BASE = [
+    'Certificado fitosanitario SENASA',
+    'Certificado de origen (Cámara de Comercio del Perú)',
+    'Bill of Lading marítimo',
+    'Factura comercial',
+    'Packing list',
+    'Certificado Global GAP del fundo de origen'
+  ];
+
+  var state = { producto: null, destino: null, volumen: null, cuando: null };
+
+  function bindGroup(containerId, key, attr) {
+    var cont = document.getElementById(containerId);
+    if (!cont) return;
+    cont.querySelectorAll('.piloto-opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        cont.querySelectorAll('.piloto-opt').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        state[key] = b.dataset[attr];
+        render();
+      });
+    });
+  }
+  bindGroup('piloto-productos', 'producto', 'prod');
+  bindGroup('piloto-destinos', 'destino', 'dest');
+  bindGroup('piloto-volumenes', 'volumen', 'vol');
+
+  var selCuando = document.getElementById('piloto-cuando');
+  if (selCuando) {
+    selCuando.addEventListener('change', function (e) {
+      state.cuando = e.target.value ? parseInt(e.target.value, 10) : null;
+      render();
+    });
+  }
+
+  function calcularFechas(mesLlegada, dias_max) {
+    var hoy = new Date();
+    var año = mesLlegada > hoy.getMonth() + 1 ? hoy.getFullYear() : hoy.getFullYear() + 1;
+    // Si el mes es el mismo o anterior al actual, ir al año que viene
+    if (mesLlegada <= hoy.getMonth() + 1 && hoy.getDate() > 10) año = hoy.getFullYear() + 1;
+    if (mesLlegada > hoy.getMonth() + 1) año = hoy.getFullYear();
+    var llegada = new Date(año, mesLlegada - 1, 15);
+    var aduana = new Date(llegada); aduana.setDate(aduana.getDate() - 3);
+    var puertoLleg = new Date(aduana);
+    var cargaPuerto = new Date(puertoLleg); cargaPuerto.setDate(cargaPuerto.getDate() - dias_max);
+    var packing = new Date(cargaPuerto); packing.setDate(packing.getDate() - 2);
+    var cosecha = new Date(packing); cosecha.setDate(cosecha.getDate() - 2);
+    return { cosecha: cosecha, packing: packing, cargaPuerto: cargaPuerto, puertoLleg: puertoLleg, aduana: aduana, llegada: llegada };
+  }
+
+  function fmtFecha(d) { return d.getDate() + ' ' + MESES_CORTO[d.getMonth() + 1]; }
+  function fmtFechaLarga(d) { return d.getDate() + ' de ' + MESES_NOMBRE[d.getMonth() + 1] + ' de ' + d.getFullYear(); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+
+  function render() {
+    var vacio = document.getElementById('piloto-vacio');
+    var real = document.getElementById('piloto-plan-real');
+    var form = document.getElementById('piloto-form');
+    if (!state.producto || !state.destino || !state.volumen || !state.cuando) {
+      vacio.hidden = false; real.hidden = true; form.hidden = true;
+      return;
+    }
+    vacio.hidden = true; real.hidden = false; form.hidden = false;
+
+    var p = PRODUCTOS[state.producto];
+    var d = DESTINOS[state.destino];
+    var v = VOLUMENES[state.volumen];
+    var mes = state.cuando;
+    var fechas = calcularFechas(mes, d.dias_max);
+    var warningFueraTemp = p.meses_dispo.indexOf(mes) === -1;
+    var warningLCL = state.volumen === 'lcl';
+    var docs = DOCS_BASE.concat(p.docs_extra || []);
+
+    var h = '';
+    h += '<div class="piloto-plan-header">';
+    h += '<div class="piloto-plan-titulo">Plan para <em>' + esc(p.nombre) + '</em> a ' + esc(d.nombre) + '</div>';
+    h += '<div class="piloto-plan-sub">' + esc(v) + ' · llegada estimada en ' + esc(MESES_NOMBRE[mes]) + '</div>';
+    h += '</div>';
+
+    h += '<div class="piloto-plan-llegada">';
+    h += '<div><div class="piloto-plan-llegada-label">Llegada a tu almacén (estimado)</div>';
+    h += '<div class="piloto-plan-llegada-fecha"><em>' + esc(fmtFechaLarga(fechas.llegada)) + '</em></div></div>';
+    h += '<div style="text-align:right"><div class="piloto-plan-llegada-label">Tránsito marítimo</div>';
+    h += '<div class="piloto-plan-llegada-fecha">' + d.dias_min + ' a ' + d.dias_max + ' <span>días</span></div></div>';
+    h += '</div>';
+
+    if (warningFueraTemp) {
+      h += '<div class="piloto-warning"><strong>Aviso de temporada:</strong> ' + esc(p.nombre.toLowerCase()) + ' peruano tiene su mejor calidad de ' + esc(p.temporada_txt) + '. En ' + esc(MESES_NOMBRE[mes]) + ' la disponibilidad puede ser limitada. Confirmamos al cotizar.</div>';
+    }
+    if (warningLCL) {
+      h += '<div class="piloto-warning"><strong>LCL:</strong> consolidación con otras cargas. Suma 5 a 7 días al tránsito y aplica para volúmenes menores a un pallet. Útil para muestras o pedidos pequeños.</div>';
+    }
+
+    h += '<div class="piloto-timeline">';
+    var pasos = [
+      ['Cosecha', fmtFecha(fechas.cosecha)],
+      ['Packing', fmtFecha(fechas.packing)],
+      ['Carga Callao', fmtFecha(fechas.cargaPuerto)],
+      ['Llega puerto', fmtFecha(fechas.puertoLleg)],
+      ['Aduana', fmtFecha(fechas.aduana)],
+      ['Tu almacén', fmtFecha(fechas.llegada)]
+    ];
+    pasos.forEach(function (item) {
+      h += '<div class="piloto-tl-paso"><div class="piloto-tl-dot"></div>';
+      h += '<div class="piloto-tl-label">' + esc(item[0]) + '</div>';
+      h += '<div class="piloto-tl-dato">' + esc(item[1]) + '</div></div>';
+    });
+    h += '</div>';
+
+    h += '<div class="piloto-grid-info">';
+    h += '<div class="piloto-info-bloque">';
+    h += '<div class="piloto-info-titulo">Reefer y producto</div>';
+    h += '<div class="piloto-info-fila"><span>Temperatura</span><strong>' + esc(p.temp) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Atmósfera</span><strong>' + esc(p.atmosfera) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Vida útil</span><strong>' + esc(p.vida) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Packaging</span><strong>' + esc(p.packaging) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Volumen</span><strong>' + esc(p.kg_cont) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Variedades</span><strong>' + esc(p.variedades) + '</strong></div>';
+    h += '</div>';
+    h += '<div class="piloto-info-bloque">';
+    h += '<div class="piloto-info-titulo">Naviera y ruta</div>';
+    h += '<div class="piloto-info-fila"><span>Naviera típica</span><strong>' + esc(d.naviera) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Frecuencia</span><strong>' + esc(d.frecuencia) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Puerto origen</span><strong>Callao, Perú</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Puerto destino</span><strong>' + esc(d.nombre) + ', ' + esc(d.pais) + '</strong></div>';
+    h += '<div class="piloto-info-fila"><span>Temporada de la fruta</span><strong>' + esc(p.temporada_txt) + '</strong></div>';
+    h += '</div>';
+    h += '</div>';
+
+    h += '<div class="piloto-info-bloque">';
+    h += '<div class="piloto-info-titulo">Documentos que vas a necesitar</div>';
+    h += '<ul class="piloto-docs-lista">';
+    docs.forEach(function (doc) { h += '<li>' + esc(doc) + '</li>'; });
+    h += '</ul>';
+    h += '</div>';
+
+    real.innerHTML = h;
+
+    document.getElementById('form-producto').value = p.nombre + ' (variedades: ' + p.variedades + ')';
+    document.getElementById('form-destino').value = d.nombre + ', ' + d.pais;
+    document.getElementById('form-volumen').value = v;
+    document.getElementById('form-cuando').value = MESES_NOMBRE[mes] + ' (llegada estimada ' + fmtFechaLarga(fechas.llegada) + ')';
+
+    document.getElementById('piloto-form-resumen').innerHTML =
+      '<strong>Tu configuración:</strong> ' + esc(p.nombre) + ' · ' + esc(d.nombre) + ' · ' + esc(v) + ' · llegada ' + esc(MESES_NOMBRE[mes]);
+  }
 })();
 </script>
 
